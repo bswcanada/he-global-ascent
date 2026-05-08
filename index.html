@@ -355,6 +355,96 @@
       box-shadow: 0 12px 30px rgba(28, 25, 23, 0.04);
     }
 
+    .card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .about-photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 200px 200px;
+      gap: 12px;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .about-photo-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .about-photo-grid img:hover {
+      transform: scale(1.04);
+    }
+
+    .about-photo-grid img:first-child {
+      grid-row: span 2;
+    }
+
+    .banner {
+      overflow: hidden;
+      position: relative;
+      height: 320px;
+    }
+
+    .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(24,21,18,0.72) 0%, rgba(24,21,18,0.2) 60%, transparent 100%);
+      display: flex;
+      align-items: center;
+    }
+
+    .banner-text {
+      color: #fff;
+      padding: 0 60px;
+      max-width: 560px;
+    }
+
+    .banner-text .section-label {
+      color: var(--soft-gold);
+    }
+
+    .banner-text h2 {
+      font-size: clamp(26px, 3.5vw, 40px);
+      color: #fff;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .about-photo-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 160px 160px;
+      }
+
+      .about-photo-grid img:first-child {
+        grid-row: span 1;
+      }
+
+      .banner {
+        height: 240px;
+      }
+
+      .banner-text {
+        padding: 0 28px;
+      }
+    }
+
     .card-icon {
       width: 48px;
       height: 48px;
@@ -640,18 +730,21 @@
 
         <div class="cards">
           <article class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Hair extensions and wigs" />
             <div class="card-icon">01</div>
             <h3>Hair Extensions</h3>
             <p>Wholesale sourcing for hair extensions, wigs, braiding hair, bundles, and beauty-related hair products for international retailers.</p>
           </article>
 
           <article class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80" alt="Nail products and accessories" />
             <div class="card-icon">02</div>
             <h3>Nail Products</h3>
             <p>Nail-related wholesale items including press-on nails, nail accessories, tools, salon supplies, and trend-based beauty products.</p>
           </article>
 
           <article class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80" alt="Fashion jewelry and accessories" />
             <div class="card-icon">03</div>
             <h3>Custom Jewelry</h3>
             <p>Affordable fashion earrings, necklaces, bracelets, jewelry sets, and custom accessory sourcing for boutiques and online stores.</p>
@@ -673,16 +766,23 @@
           </p>
         </div>
 
-        <div class="benefits">
-          <div class="benefit">Flexible wholesale support</div>
-          <div class="benefit">Custom product sourcing</div>
-          <div class="benefit">Export-ready preparation</div>
-          <div class="benefit">Clear buyer communication</div>
-          <div class="benefit">Beauty and fashion focus</div>
-          <div class="benefit">Support for overseas buyers</div>
+        <div class="about-photo-grid">
+          <img src="https://images.unsplash.com/photo-1595783851681-2c23e17da6c6?w=600&q=80" alt="Beauty salon wholesale products" />
+          <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&q=80" alt="Hair and beauty accessories" />
+          <img src="https://images.unsplash.com/photo-1583241800698-e8ab01830a36?w=600&q=80" alt="Fashion jewelry wholesale" />
         </div>
       </div>
     </section>
+
+    <div class="banner" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1470259078422-826894b933aa?w=1400&q=80" alt="Global beauty and fashion wholesale" />
+      <div class="banner-overlay">
+        <div class="banner-text">
+          <div class="section-label">Worldwide Export</div>
+          <h2>Connecting global buyers with quality beauty products.</h2>
+        </div>
+      </div>
+    </div>
 
     <section id="process">
       <div class="container">
