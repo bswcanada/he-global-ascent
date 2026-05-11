@@ -255,6 +255,17 @@
       height: 100%;
       object-fit: cover;
       opacity: 0.45;
+      z-index: 0;
+    }
+
+    /* 텍스트 투명도 90% 및 확실한 위층 배치 적용 */
+    .hero-card-top small,
+    .hero-card-top h2,
+    .hero-card-top p {
+      position: relative;
+      z-index: 1;
+      opacity: 0.9;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.15); /* 글씨가 배경에 묻히지 않게 미세한 그림자 추가 */
     }
 
     .hero-stats {
@@ -361,32 +372,8 @@
       border-bottom: 1px solid var(--line);
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 56px;
-      align-items: start;
-    }
-
-    .about-photo-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 200px 200px;
-      gap: 12px;
-      border-radius: 24px;
-      overflow: hidden;
-    }
-
-    .about-photo-grid img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
-    }
-
-    .about-photo-grid img:first-child {
-      grid-row: span 2;
+    .about-content {
+      max-width: 860px;
     }
 
     /* --- Process Section --- */
@@ -479,7 +466,7 @@
 
     @media (max-width: 900px) {
       .nav { display: none; }
-      .hero-grid, .about-grid, .cta-grid { grid-template-columns: 1fr; }
+      .hero-grid, .cta-grid { grid-template-columns: 1fr; }
       .process-grid { grid-template-columns: 1fr 1fr; }
     }
 
@@ -532,17 +519,17 @@
           </div>
 
           <div class="hero-image-strip" aria-hidden="true">
-            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=75" alt="Hair extensions" />
-            <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&q=75" alt="Nail products" />
-            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&q=75" alt="Fashion jewelry" />
-            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400&q=75" alt="K-Beauty cosmetics" />
+            <img src="hero-1.jpg" alt="Hair extensions" />
+            <img src="hero-2.jpg" alt="Nail products" />
+            <img src="hero-3.jpg" alt="Fashion jewelry" />
+            <img src="hero-4.jpg" alt="K-Beauty cosmetics" />
           </div>
         </div>
 
         <aside class="hero-card" aria-label="Company highlights">
           <div class="hero-card-top">
             <img
-              src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80"
+              src="hero-main.jpg"
               alt="Beauty products — hair and accessories"
               loading="eager"
             />
@@ -576,28 +563,28 @@
 
         <div class="cards">
           <article class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Hair extensions and wigs" />
+            <img class="card-img" src="prod-hair.jpg" alt="Hair extensions and wigs" />
             <div class="card-icon">01</div>
             <h3 class="lang-el" data-id="p1-h3">Hair Extensions</h3>
             <p class="lang-el" data-id="p1-p">Wholesale sourcing for hair extensions, wigs, braiding hair, bundles, and beauty-related hair products for international retailers.</p>
           </article>
 
           <article class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80" alt="Nail products and accessories" />
+            <img class="card-img" src="prod-nails.jpg" alt="Nail products and accessories" />
             <div class="card-icon">02</div>
             <h3 class="lang-el" data-id="p2-h3">Nail Products</h3>
             <p class="lang-el" data-id="p2-p">Nail-related wholesale items including press-on nails, nail accessories, tools, salon supplies, and trend-based beauty products.</p>
           </article>
 
           <article class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80" alt="Fashion jewelry and accessories" />
+            <img class="card-img" src="prod-jewelry.jpg" alt="Fashion jewelry and accessories" />
             <div class="card-icon">03</div>
             <h3 class="lang-el" data-id="p3-h3">Custom Jewelry</h3>
             <p class="lang-el" data-id="p3-p">Affordable fashion earrings, necklaces, bracelets, jewelry sets, and custom accessory sourcing for boutiques and online stores.</p>
           </article>
 
           <article class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600&q=80" alt="K-Beauty skincare and cosmetics" />
+            <img class="card-img" src="prod-kbeauty.jpg" alt="K-Beauty skincare and cosmetics" />
             <div class="card-icon">04</div>
             <h3 class="lang-el" data-id="p4-h3">K-Beauty</h3>
             <p class="lang-el" data-id="p4-p">Leading Korean skincare, innovative cosmetics, and trending beauty brands curated for the European and Latin American markets.</p>
@@ -607,8 +594,8 @@
     </section>
 
     <section id="about" class="about">
-      <div class="container about-grid">
-        <div>
+      <div class="container">
+        <div class="about-content">
           <div class="section-label lang-el" data-id="about-label">About Us</div>
           <h2 class="lang-el" data-id="about-h2">A simple and reliable export partner for growing businesses.</h2>
           
@@ -621,12 +608,6 @@
           <p class="section-text lang-el" data-id="about-p3">
             Our goal is to make product sourcing easier for international retailers by supporting product selection, quotations, order preparation, shipment coordination, and market entry strategy for Europe and Latin America.
           </p>
-        </div>
-
-        <div class="about-photo-grid">
-          <img src="https://images.unsplash.com/photo-1595783851681-2c23e17da6c6?w=600&q=80" alt="Beauty salon wholesale products" />
-          <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&q=80" alt="Hair and beauty accessories" />
-          <img src="https://images.unsplash.com/photo-1583241800698-e8ab01830a36?w=600&q=80" alt="Fashion jewelry wholesale" />
         </div>
       </div>
     </section>
@@ -653,7 +634,7 @@
 
           <div class="step">
             <div class="step-number">3</div>
-            <div class="step-number" style="display:none">3</div><!-- placeholder -->
+            <div class="step-number" style="display:none">3</div>
             <h3 class="lang-el" data-id="step3-h3">Confirm Order</h3>
             <p class="lang-el" data-id="step3-p">Finalize product details, packaging needs, quantity, and shipping requirements.</p>
           </div>
