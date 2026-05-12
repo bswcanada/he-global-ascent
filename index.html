@@ -40,7 +40,6 @@
     .btn-dark:hover { background: #342f2a; transform: translateY(-1px); }
     .btn-light { background: #fff; border-color: var(--line); color: var(--text); }
 
-    /* Updated Card Styles for Buttons */
     .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: 0 12px 30px rgba(28, 25, 23, 0.04); display: flex; flex-direction: column; }
     .card-img { width: 100%; height: 180px; object-fit: cover; border-radius: 14px; margin-bottom: 20px; }
     .card-icon { width: 48px; height: 48px; border-radius: 16px; background: var(--dark); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px; }
@@ -85,8 +84,14 @@
     .about { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .about-content { max-width: 860px; }
     .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .step { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+    .step { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; }
     .step-number { width: 38px; height: 38px; border-radius: 50%; background: var(--dark); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; margin-bottom: 18px; }
+    
+    /* New Pictogram Styles */
+    .step-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .step-icon { width: 32px; height: 32px; color: var(--gold); flex-shrink: 0; }
+    .step h3 { font-size: 18px; line-height: 1.2; }
+
     .cta { background: var(--dark); color: #fff; padding: 76px 0; }
     .cta-grid { display: grid; grid-template-columns: 1fr 0.9fr; gap: 48px; align-items: center; }
     .contact-box { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 28px; padding: 28px; }
@@ -235,24 +240,40 @@
           <h2 class="lang-el" data-id="process-h2">From product inquiry to shipment preparation.</h2>
         </div>
         <div class="process-grid">
+          <!-- Step 1 -->
           <div class="step">
             <div class="step-number">1</div>
-            <h3 class="lang-el" data-id="step1-h3">Send Inquiry</h3>
+            <div class="step-header">
+              <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <h3 class="lang-el" data-id="step1-h3">Send Inquiry</h3>
+            </div>
             <p class="lang-el" data-id="step1-p">Tell us your product type, quantity range, destination country, and target budget.</p>
           </div>
+          <!-- Step 2 -->
           <div class="step">
             <div class="step-number">2</div>
-            <h3 class="lang-el" data-id="step2-h3">Review Options</h3>
+            <div class="step-header">
+              <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+              <h3 class="lang-el" data-id="step2-h3">Review Options</h3>
+            </div>
             <p class="lang-el" data-id="step2-p">We review your request and prepare suitable product or sourcing options.</p>
           </div>
+          <!-- Step 3 -->
           <div class="step">
             <div class="step-number">3</div>
-            <h3 class="lang-el" data-id="step3-h3">Confirm Order</h3>
+            <div class="step-header">
+              <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+              <h3 class="lang-el" data-id="step3-h3">Confirm Order</h3>
+            </div>
             <p class="lang-el" data-id="step3-p">Finalize product details, packaging needs, quantity, and shipping requirements.</p>
           </div>
+          <!-- Step 4 -->
           <div class="step">
             <div class="step-number">4</div>
-            <h3 class="lang-el" data-id="step4-h3">Prepare Export</h3>
+            <div class="step-header">
+              <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+              <h3 class="lang-el" data-id="step4-h3">Prepare Export</h3>
+            </div>
             <p class="lang-el" data-id="step4-p">We assist with order preparation, inspection, and export shipment coordination.</p>
           </div>
         </div>
@@ -353,8 +374,8 @@
         "step3-h3": "Confirmar pedido", "step3-p": "Complete su solicitud con los detalles del producto, los requisitos de embalaje, la cantidad exacta y las condiciones de envío.",
         "step4-h3": "Preparar exportación", "step4-p": "Le apoyamos en la preparación del pedido, la inspección y la coordinación del envío.",
         "contact-label": "Contacto", "contact-h2": "¿Listo para solicitar un presupuesto mayorista?", "contact-btn": "Escríbanos", "contact-email-label": "Correo electrónico",
-        "contact-phone-label": "Teléfono", "contact-phone-text": "1-201-346-2002 (Oficina EE. UU.)", "contact-address-label": "Dirección",
-        "contact-address-text-us": "130 Wesley Street, South Hackensack, <BR>NJ 07606 (Oficina EE. UU.)", "contact-address-text-sp": "Calle Pradillos 7, Los Molinos, Madrid<br>España 28460 (Oficina de España)",
+        "contact-phone-label": "Teléfono", "contact-phone-text": "1-201-346-2002 (Oficina EE. UU.)", "contact-address-label": "Address",
+        "contact-address-text-us": "130 Wesley Street, South Hackensack, <BR>NJ 07606 (Oficina EE. UU.)", "contact-address-text-sp": "Calle Pradillos 7, Los Molinos, Madrid<br>Spain 28460 (Oficina de España)",
         "contact-service-label": "Servicio", "contact-service-text": "Soporte de exportación mayorista para productos relacionados con el cabello, las uñas y bisutería.",
         "footer-rights": "Todos los derechos reservados.", "footer-legal-notice": "Aviso Legal", "footer-privacy": "Política de Privacidad", "footer-cookies": "Política de Cookies",
         "cookie-text": "Utilizamos cookies estrictamente necesarias para el correcto funcionamiento del sitio.", "cookie-link": "Leer Política de Cookies", "cookie-btn": "Aceptar"
