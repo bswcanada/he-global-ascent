@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookie Policy | HE Global Ascent</title>
+  <style>
+    :root { --bg: #f7f4ef; --card: #ffffff; --text: #1c1917; --muted: #6b625b; --line: #e7dfd5; --dark: #181512; --gold: #c9a66b; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(800px, calc(100% - 40px)); margin: 0 auto; }
+    .site-header { background: #fff; border-bottom: 1px solid var(--line); padding: 15px 0; position: sticky; top: 0; z-index: 10; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; }
+    
+    main { flex: 1; }
+    .legal-content { background: var(--card); padding: 50px; border-radius: 22px; box-shadow: 0 18px 45px rgba(28,25,23,0.05); margin: 40px auto; }
+    h1 { font-size: 32px; margin-bottom: 30px; letter-spacing: -0.03em; }
+    h2 { font-size: 20px; margin-top: 30px; margin-bottom: 10px; color: var(--dark); }
+    p, ul { color: var(--muted); font-size: 15px; margin-bottom: 16px; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
+    .highlight { background-color: yellow; color: red; font-weight: bold; padding: 0 4px; }
+    .lang-switcher { display: flex; gap: 8px; font-size: 13px; font-weight: 700; color: var(--muted); }
+    .lang-btn { background: none; border: none; cursor: pointer; padding: 4px 8px; color: var(--muted); }
+    .lang-btn.active { color: var(--gold); text-decoration: underline; }
+    
+    /* Footer added to legal pages */
+    .footer { padding: 42px 0; background: #fff; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; margin-top: 40px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .footer-legal { display: flex; gap: 20px; font-size: 13px; }
+    .footer-legal a:hover { color: var(--gold); text-decoration: underline; }
+
+    @media (max-width: 620px) { .legal-content { padding: 30px 20px; } }
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="lang-el" data-id="back-home" style="font-weight: bold; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;">&larr; Back to Home</a>
+      <div class="lang-switcher">
+        <button onclick="setLanguage('en')" id="btn-en" class="lang-btn">EN</button>
+        <span>|</span>
+        <button onclick="setLanguage('es')" id="btn-es" class="lang-btn">ES</button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <div class="legal-content">
+      <h1 class="lang-el" data-id="title">Cookie Policy</h1>
+      <h2 class="lang-el" data-id="s1-title">1. WHAT ARE COOKIES?</h2>
+      <p class="lang-el" data-id="s1-p">Cookies are small text files stored in your browser to remember information about your visit (preferences, language, session, etc.).</p>
+      <h2 class="lang-el" data-id="s2-title">2. COOKIES USED ON THIS SITE</h2>
+      <p class="lang-el" data-id="s2-p">This website uses ONLY strictly necessary technical cookies for the correct functioning of the site. These do not require prior consent under Article 22.2 of the LSSI-CE.</p>
+      <p class="lang-el" data-id="s2-not">We do NOT use analytics, advertising, third-party tracking, or social media cookies.</p>
+      <p><span class="highlight">▶ [Google Analytics, Meta Pixel 등 추가 시 수정 필요]</span></p>
+      <h2 class="lang-el" data-id="s3-title">3. MANAGING COOKIES</h2>
+      <p class="lang-el" data-id="s3-p">You can configure your browser to accept, reject, or delete cookies at any time. Disabling technical cookies may affect the proper functioning of the site.</p>
+      <p style="margin-top: 30px;"><strong class="lang-el" data-id="updated">Last update:</strong> 2025-05-12</p>
+    </div>
+  </main>
+  
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> HE Global Ascent. <span class="lang-el" data-id="footer-rights">All rights reserved.</span></p>
+      <div class="footer-legal">
+        <a href="../aviso-legal/index.html" class="lang-el" data-id="footer-legal-notice">Legal Notice</a>
+        <a href="../politica-de-privacidad/index.html" class="lang-el" data-id="footer-privacy">Privacy Policy</a>
+        <a href="../politica-de-cookies/index.html" class="lang-el" data-id="footer-cookies">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        "back-home": "← Back to Home", "title": "Cookie Policy",
+        "s1-title": "1. WHAT ARE COOKIES?", "s1-p": "Cookies are small text files stored in your browser to remember information about your visit (preferences, language, session, etc.).",
+        "s2-title": "2. COOKIES USED ON THIS SITE", "s2-p": "This website uses ONLY strictly necessary technical cookies for the correct functioning of the site. These do not require prior consent under Article 22.2 of the LSSI-CE.",
+        "s2-not": "We do NOT use analytics, advertising, third-party tracking, or social media cookies.",
+        "s3-title": "3. MANAGING COOKIES", "s3-p": "You can configure your browser to accept, reject, or delete cookies at any time. Disabling technical cookies may affect the proper functioning of the site.",
+        "updated": "Last update:",
+        "footer-rights": "All rights reserved.", "footer-legal-notice": "Legal Notice", "footer-privacy": "Privacy Policy", "footer-cookies": "Cookie Policy"
+      },
+      es: {
+        "back-home": "← Volver a Inicio", "title": "Política de Cookies",
+        "s1-title": "1. ¿QUÉ SON LAS COOKIES?", "s1-p": "Las cookies son pequeños archivos de texto que un sitio web almacena en el navegador del usuario para recordar información sobre la visita (preferencias, idioma, sesión, etc.).",
+        "s2-title": "2. COOKIES UTILIZADAS EN ESTE SITIO", "s2-p": "Este sitio web utiliza únicamente cookies técnicas estrictamente necesarias para el correcto funcionamiento del sitio. Estas cookies no requieren consentimiento previo del usuario conforme al artículo 22.2 de la LSSI-CE.",
+        "s2-not": "No utilizamos cookies analíticas, publicitarias, de seguimiento de terceros ni de redes sociales.",
+        "s3-title": "3. GESTIÓN DE LAS COOKIES", "s3-p": "Puede configurar su navegador para aceptar, rechazar o eliminar las cookies en cualquier momento. La desactivación de las cookies técnicas puede afectar al correcto funcionamiento del sitio.",
+        "updated": "Última actualización:",
+        "footer-rights": "Todos los derechos reservados.", "footer-legal-notice": "Aviso Legal", "footer-privacy": "Política de Privacidad", "footer-cookies": "Política de Cookies"
+      }
+    };
+
+    function setLanguage(lang) {
+      document.querySelectorAll('.lang-el').forEach(el => {
+        const id = el.getAttribute('data-id');
+        if (translations[lang] && translations[lang][id]) el.innerHTML = translations[lang][id];
+      });
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.documentElement.lang = lang;
+      localStorage.setItem('preferredLang', lang);
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+      const savedLang = localStorage.getItem('preferredLang') || 'en';
+      setLanguage(savedLang);
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+
+  </script>
+</body>
+</html>

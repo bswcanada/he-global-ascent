@@ -18,482 +18,91 @@
       --radius: 22px;
       --shadow: 0 18px 45px rgba(28, 25, 23, 0.10);
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1120px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    /* --- Header & Logo Section --- */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(247, 244, 239, 0.92);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .header-inner {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .brand-logo {
-      width: 52px;
-      height: 52px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 6px 16px rgba(28, 25, 23, 0.12);
-    }
-
-    .brand-name {
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-size: 14px;
-    }
-
-    .brand-subtitle {
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 1px;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .nav a:hover {
-      color: var(--text);
-    }
-
-    /* Language Switcher Styling */
-    .lang-switcher {
-      display: flex;
-      gap: 8px;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--muted);
-    }
-
-    .lang-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px 8px;
-      color: var(--muted);
-      transition: color 0.2s;
-    }
-
-    .lang-btn.active {
-      color: var(--gold);
-      text-decoration: underline;
-    }
-
-    .lang-btn:hover {
-      color: var(--text);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      padding: 13px 22px;
-      font-weight: 700;
-      font-size: 14px;
-      transition: 0.2s ease;
-      border: 1px solid transparent;
-      cursor: pointer;
-    }
-
-    .btn-dark {
-      background: var(--dark);
-      color: #fff;
-      box-shadow: 0 14px 28px rgba(28, 25, 23, 0.16);
-    }
-
-    .btn-dark:hover {
-      background: #342f2a;
-      transform: translateY(-1px);
-    }
-
-    .btn-light {
-      background: #fff;
-      border-color: var(--line);
-      color: var(--text);
-    }
-
-    /* --- Hero Section --- */
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 92px 0 86px;
-    }
-
-    .hero-grid {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      align-items: center;
-      gap: 56px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.68);
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 22px;
-    }
-
-    h1 {
-      font-size: clamp(42px, 6vw, 72px);
-      line-height: 0.98;
-      letter-spacing: -0.055em;
-      max-width: 720px;
-    }
-
-    .hero-text {
-      color: var(--muted);
-      font-size: 18px;
-      max-width: 620px;
-      margin-top: 24px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 32px;
-    }
-
-    .hero-image-strip {
-      display: flex;
-      gap: 10px;
-      margin-top: 32px;
-      overflow: hidden;
-      border-radius: 16px;
-    }
-
-    .hero-image-strip img {
-      width: calc(25% - 8px);
-      height: 90px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-    }
-
-    .hero-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 34px;
-      padding: 18px;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card-top {
-      border-radius: 26px;
-      background: var(--dark);
-      color: #fff;
-      padding: 34px;
-      min-height: 280px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card-top img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.45;
-      z-index: 0;
-    }
-
-    .hero-card-top small,
-    .hero-card-top h2,
-    .hero-card-top p {
-      position: relative;
-      z-index: 1;
-      opacity: 0.9;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 14px;
-    }
-
-    .stat {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 20px;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 20px;
-      margin-bottom: 6px;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* --- Sections & Cards --- */
-    section {
-      padding: 82px 0;
-    }
-
-    .section-label {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 13px;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    h2 {
-      font-size: clamp(30px, 4vw, 48px);
-      line-height: 1.08;
-      letter-spacing: -0.045em;
-    }
-
-    .section-text {
-      color: var(--muted);
-      margin-top: 16px;
-      font-size: 17px;
-      max-width: 720px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: 0 12px 30px rgba(28, 25, 23, 0.04);
-    }
-
-    .card-img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 14px;
-      margin-bottom: 20px;
-    }
-
-    .card-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      background: var(--dark);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      margin-bottom: 20px;
-    }
-
-    .card h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
-      letter-spacing: -0.03em;
-    }
-
-    .card p {
-      color: var(--muted);
-    }
-
-    /* --- About Section --- */
-    .about {
-      background: #fff;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .about-content {
-      max-width: 860px;
-    }
-
-    /* --- Process Section --- */
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .step {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 24px;
-    }
-
-    .step-number {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: var(--dark);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      margin-bottom: 18px;
-    }
-
-    /* --- CTA Section --- */
-    .cta {
-      background: var(--dark);
-      color: #fff;
-      padding: 76px 0;
-    }
-
-    .cta-grid {
-      display: grid;
-      grid-template-columns: 1fr 0.9fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .contact-box {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 28px;
-      padding: 28px;
-    }
-
-    .contact-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      color: #f4efe7;
-    }
-
-    .contact-item:last-child {
-      border-bottom: 0;
-    }
-
-    .contact-item span:first-child {
-      color: var(--soft-gold);
-      font-weight: 800;
-      min-width: 72px;
-    }
-
-    /* --- Footer --- */
-    .footer {
-      padding: 28px 0;
-      background: #fff;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    /* --- Media Queries --- */
-    @media (max-width: 1024px) {
-      .cards { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 900px) {
-      .nav { display: none; }
-      .hero-grid, .cta-grid { grid-template-columns: 1fr; }
-      .process-grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (max-width: 620px) {
-      .cards { grid-template-columns: 1fr; }
-      .process-grid { grid-template-columns: 1fr; }
-      .brand-subtitle { display: none; }
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(247, 244, 239, 0.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+    .header-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand-logo { width: 52px; height: 52px; object-fit: cover; border-radius: 50%; box-shadow: 0 6px 16px rgba(28, 25, 23, 0.12); }
+    .brand-name { font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; font-size: 14px; }
+    .brand-subtitle { color: var(--muted); font-size: 12px; margin-top: 1px; }
+    .nav { display: flex; align-items: center; gap: 28px; color: var(--muted); font-size: 14px; font-weight: 600; }
+    .nav a:hover { color: var(--text); }
+    .lang-switcher { display: flex; gap: 8px; font-size: 13px; font-weight: 700; color: var(--muted); }
+    .lang-btn { background: none; border: none; cursor: pointer; padding: 4px 8px; color: var(--muted); transition: color 0.2s; }
+    .lang-btn.active { color: var(--gold); text-decoration: underline; }
+    .lang-btn:hover { color: var(--text); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 13px 22px; font-weight: 700; font-size: 14px; transition: 0.2s ease; border: 1px solid transparent; cursor: pointer; }
+    .btn-dark { background: var(--dark); color: #fff; box-shadow: 0 14px 28px rgba(28, 25, 23, 0.16); }
+    .btn-dark:hover { background: #342f2a; transform: translateY(-1px); }
+    .btn-light { background: #fff; border-color: var(--line); color: var(--text); }
+    .hero { position: relative; overflow: hidden; padding: 92px 0 86px; }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1.08fr 0.92fr; align-items: center; gap: 56px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.68); border-radius: 999px; color: var(--muted); font-size: 13px; font-weight: 700; margin-bottom: 22px; }
+    h1 { font-size: clamp(42px, 6vw, 72px); line-height: 0.98; letter-spacing: -0.055em; max-width: 720px; }
+    .hero-text { color: var(--muted); font-size: 18px; max-width: 620px; margin-top: 24px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
+    .hero-image-strip { display: flex; gap: 10px; margin-top: 32px; overflow: hidden; border-radius: 16px; }
+    .hero-image-strip img { width: calc(25% - 8px); height: 90px; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); }
+    .hero-card { background: var(--card); border: 1px solid var(--line); border-radius: 34px; padding: 18px; box-shadow: var(--shadow); }
+    .hero-card-top { border-radius: 26px; background: var(--dark); color: #fff; padding: 34px; min-height: 280px; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
+    .hero-card-top img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.45; z-index: 0; }
+    .hero-card-top small, .hero-card-top h2, .hero-card-top p { position: relative; z-index: 1; opacity: 0.9; text-shadow: 0 2px 6px rgba(0,0,0,0.15); }
+    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+    .stat { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 20px; }
+    .stat strong { display: block; font-size: 20px; margin-bottom: 6px; }
+    .stat span { color: var(--muted); font-size: 14px; }
+    section { padding: 82px 0; }
+    .section-label { color: var(--gold); text-transform: uppercase; letter-spacing: 0.18em; font-size: 13px; font-weight: 800; margin-bottom: 12px; }
+    h2 { font-size: clamp(30px, 4vw, 48px); line-height: 1.08; letter-spacing: -0.045em; }
+    .section-text { color: var(--muted); margin-top: 16px; font-size: 17px; max-width: 720px; }
+    .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: 0 12px 30px rgba(28, 25, 23, 0.04); }
+    .card-img { width: 100%; height: 180px; object-fit: cover; border-radius: 14px; margin-bottom: 20px; }
+    .card-icon { width: 48px; height: 48px; border-radius: 16px; background: var(--dark); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px; }
+    .card h3 { font-size: 22px; margin-bottom: 12px; letter-spacing: -0.03em; }
+    .card p { color: var(--muted); }
+    .about { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .about-content { max-width: 860px; }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .step { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+    .step-number { width: 38px; height: 38px; border-radius: 50%; background: var(--dark); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; margin-bottom: 18px; }
+    .cta { background: var(--dark); color: #fff; padding: 76px 0; }
+    .cta-grid { display: grid; grid-template-columns: 1fr 0.9fr; gap: 48px; align-items: center; }
+    .contact-box { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 28px; padding: 28px; }
+    .contact-item { display: flex; gap: 12px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.12); color: #f4efe7; }
+    .contact-item:last-child { border-bottom: 0; }
+    .contact-item span:first-child { color: var(--soft-gold); font-weight: 800; min-width: 72px; }
+    .footer { padding: 42px 0; background: #fff; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .footer-legal { display: flex; gap: 20px; font-size: 13px; }
+    .footer-legal a:hover { color: var(--gold); text-decoration: underline; }
+    .cookie-banner { position: fixed; bottom: 24px; left: 24px; right: 24px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 9999; display: none; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto; }
+    .cookie-content { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 20px; font-size: 13px; color: var(--muted); }
+    @media (max-width: 1024px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 900px) { .nav { display: none; } .hero-grid, .cta-grid { grid-template-columns: 1fr; } .process-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 620px) { .cards { grid-template-columns: 1fr; } .process-grid { grid-template-columns: 1fr; } .brand-subtitle { display: none; } .cookie-content { flex-direction: column; text-align: center; } }
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="HE Global Ascent Home">
-        <img src="he-logo.png" alt="HE Global Ascent Logo" class="brand-logo">
+        <img src="he-logo.png" alt="HE Global Ascent Logo" class="brand-logo" onerror="this.src='https://via.placeholder.com/52'">
         <div>
           <div class="brand-name">HE Global Ascent</div>
           <div class="brand-subtitle lang-el" data-id="brand-subtitle">Wholesale Export Partner</div>
         </div>
       </a>
-
       <nav class="nav" aria-label="Main navigation">
         <a href="#products" class="lang-el" data-id="nav-products">Products</a>
         <a href="#about" class="lang-el" data-id="nav-about">About</a>
         <a href="#process" class="lang-el" data-id="nav-process">Process</a>
         <a href="#contact" class="lang-el" data-id="nav-contact">Contact</a>
       </nav>
-
       <div class="lang-switcher">
         <button onclick="setLanguage('en')" id="btn-en" class="lang-btn active">EN</button>
         <span style="opacity:0.3">|</span>
@@ -508,7 +117,7 @@
         <div>
           <div class="eyebrow lang-el" data-id="hero-eyebrow">Global Beauty & Fashion Export</div>
           <h1 class="lang-el" data-id="hero-h1">Wholesale</h1>
-	        <h2 class="lang-el" data-id="hero-h2">sourcing for overseas beauty and fashion retailers.</h2>
+          <h2 class="lang-el" data-id="hero-h2">sourcing for overseas beauty and fashion retailers.</h2>
           <p class="hero-text lang-el" data-id="hero-text">
             HE Global Ascent supplies hair extensions, nail-related products, affordable custom fashion jewelry, and <strong>trending K-Beauty cosmetics</strong> for international buyers, boutiques, salons, beauty supply stores, and distributors.
           </p>
@@ -516,22 +125,16 @@
             <a class="btn btn-dark lang-el" data-id="hero-btn-inquiry" href="mailto:info@heglobalascent.com?subject=Wholesale%20Inquiry%20-%20HE%20Global%20Ascent">Start Wholesale Inquiry</a>
             <a class="btn btn-light lang-el" data-id="hero-btn-range" href="#products">View Product Range</a>
           </div>
-
           <div class="hero-image-strip" aria-hidden="true">
-            <img src="hero-1.jpg" alt="Hair extensions" />
-            <img src="hero-2.jpg" alt="Nail products" />
-            <img src="hero-3.jpg" alt="Fashion jewelry" />
-            <img src="hero-4.jpg" alt="K-Beauty cosmetics" />
+            <img src="hero-1.jpg" alt="Hair extensions" onerror="this.src='https://via.placeholder.com/150'" />
+            <img src="hero-2.jpg" alt="Nail products" onerror="this.src='https://via.placeholder.com/150'" />
+            <img src="hero-3.jpg" alt="Fashion jewelry" onerror="this.src='https://via.placeholder.com/150'" />
+            <img src="hero-4.jpg" alt="K-Beauty cosmetics" onerror="this.src='https://via.placeholder.com/150'" />
           </div>
         </div>
-
         <aside class="hero-card" aria-label="Company highlights">
           <div class="hero-card-top">
-            <img
-              src="hero-main.jpg"
-              alt="Beauty products — hair and accessories"
-              loading="eager"
-            />
+            <img src="hero-main.jpg" alt="Beauty products — hair and accessories" loading="eager" onerror="this.src='https://via.placeholder.com/400'" />
             <small class="lang-el" data-id="card-small">Export Ready</small>
             <h2 class="lang-el" data-id="card-h2">· Hair · Nails <br> · Jewelry <br>· K-Beauty</h2>
             <p class="lang-el" data-id="card-p">Reliable sourcing support for growing overseas businesses.</p>
@@ -559,31 +162,27 @@
             We focus on product categories that are easy for retailers, salons, boutiques, and online stores to introduce to their customers.
           </p>
         </div>
-
         <div class="cards">
           <article class="card">
-            <img class="card-img" src="prod-hair.jpg" alt="Hair extensions and wigs" />
+            <img class="card-img" src="prod-hair.jpg" alt="Hair extensions and wigs" onerror="this.src='https://via.placeholder.com/300'" />
             <div class="card-icon">01</div>
             <h3 class="lang-el" data-id="p1-h3">Hair Extensions</h3>
             <p class="lang-el" data-id="p1-p">Wholesale sourcing for hair extensions, wigs, braiding hair, bundles, and beauty-related hair products for international retailers.</p>
           </article>
-
           <article class="card">
-            <img class="card-img" src="prod-nails.jpg" alt="Nail products and accessories" />
+            <img class="card-img" src="prod-nails.jpg" alt="Nail products and accessories" onerror="this.src='https://via.placeholder.com/300'" />
             <div class="card-icon">02</div>
             <h3 class="lang-el" data-id="p2-h3">Nail Products</h3>
             <p class="lang-el" data-id="p2-p">Nail-related wholesale items including press-on nails, nail accessories, tools, salon supplies, and trend-based beauty products.</p>
           </article>
-
           <article class="card">
-            <img class="card-img" src="prod-jewelry.jpg" alt="Fashion jewelry and accessories" />
+            <img class="card-img" src="prod-jewelry.jpg" alt="Fashion jewelry and accessories" onerror="this.src='https://via.placeholder.com/300'" />
             <div class="card-icon">03</div>
             <h3 class="lang-el" data-id="p3-h3">Custom Jewelry</h3>
             <p class="lang-el" data-id="p3-p">Affordable fashion earrings, necklaces, bracelets, jewelry sets, and custom accessory sourcing for boutiques and online stores.</p>
           </article>
-
           <article class="card">
-            <img class="card-img" src="prod-kbeauty.jpg" alt="K-Beauty skincare and cosmetics" />
+            <img class="card-img" src="prod-kbeauty.jpg" alt="K-Beauty skincare and cosmetics" onerror="this.src='https://via.placeholder.com/300'" />
             <div class="card-icon">04</div>
             <h3 class="lang-el" data-id="p4-h3">K-Beauty</h3>
             <p class="lang-el" data-id="p4-p">Leading Korean skincare, innovative cosmetics, and trending beauty brands curated for the European and Latin American markets.</p>
@@ -597,16 +196,9 @@
         <div class="about-content">
           <div class="section-label lang-el" data-id="about-label">About Us</div>
           <h2 class="lang-el" data-id="about-h2">A simple and reliable export partner for growing businesses.</h2>
-          
-          <p class="section-text lang-el" data-id="about-p1">
-            HE Global Ascent is a trusted and reliable export partner for growing businesses entering the European and Latin American markets.
-          </p>
-          <p class="section-text lang-el" data-id="about-p2">
-            We help overseas buyers find suitable beauty and fashion products through clear communication, flexible wholesale support, and export-ready preparation.
-          </p>
-          <p class="section-text lang-el" data-id="about-p3">
-            Our goal is to make product sourcing easier for international retailers by supporting product selection, quotations, order preparation, shipment coordination, and market entry strategy for Europe and Latin America.
-          </p>
+          <p class="section-text lang-el" data-id="about-p1">HE Global Ascent is a trusted and reliable export partner for growing businesses entering the European and Latin American markets.</p>
+          <p class="section-text lang-el" data-id="about-p2">We help overseas buyers find suitable beauty and fashion products through clear communication, flexible wholesale support, and export-ready preparation.</p>
+          <p class="section-text lang-el" data-id="about-p3">Our goal is to make product sourcing easier for international retailers by supporting product selection, quotations, order preparation, shipment coordination, and market entry strategy for Europe and Latin America.</p>
         </div>
       </div>
     </section>
@@ -617,27 +209,22 @@
           <div class="section-label lang-el" data-id="process-label">How It Works</div>
           <h2 class="lang-el" data-id="process-h2">From product inquiry to shipment preparation.</h2>
         </div>
-
         <div class="process-grid">
           <div class="step">
             <div class="step-number">1</div>
             <h3 class="lang-el" data-id="step1-h3">Send Inquiry</h3>
             <p class="lang-el" data-id="step1-p">Tell us your product type, quantity range, destination country, and target budget.</p>
           </div>
-
           <div class="step">
             <div class="step-number">2</div>
             <h3 class="lang-el" data-id="step2-h3">Review Options</h3>
             <p class="lang-el" data-id="step2-p">We review your request and prepare suitable product or sourcing options.</p>
           </div>
-
           <div class="step">
             <div class="step-number">3</div>
-            <div class="step-number" style="display:none">3</div>
             <h3 class="lang-el" data-id="step3-h3">Confirm Order</h3>
             <p class="lang-el" data-id="step3-p">Finalize product details, packaging needs, quantity, and shipping requirements.</p>
           </div>
-
           <div class="step">
             <div class="step-number">4</div>
             <h3 class="lang-el" data-id="step4-h3">Prepare Export</h3>
@@ -656,28 +243,12 @@
             <a class="btn btn-light lang-el" data-id="contact-btn" href="mailto:info@heglobalascent.com?subject=Wholesale%20Inquiry%20-%20HE%20Global%20Ascent">Email Us</a>
           </div>
         </div>
-
         <div class="contact-box">
-          <div class="contact-item">
-            <span class="lang-el" data-id="contact-email-label">Email</span>
-            <a href="mailto:info@heglobalascent.com">info@heglobalascent.com</a>
-          </div>
-          <div class="contact-item">
-            <span class="lang-el" data-id="contact-phone-label">Phone</span>
-            <span class="lang-el" data-id="contact-phone-text">1-201-346-2002 (US Office)</span>
-          </div>
-          <div class="contact-item">
-            <span class="lang-el" data-id="contact-address-label">Address</span>
-            <span class="lang-el" data-id="contact-address-text-us">130 Wesley Street, South Hackensack, <BR>NJ 07606 (US Office)</span>
-          </div>
-          <div class="contact-item">
-            <span class="lang-el" data-id="contact-address-label">Address</span>
-            <span class="lang-el" data-id="contact-address-text-sp">Calle Pradillos 7<br>Los Molinos, Madrid<br>Spain 28460 (Spain Office)</span>
-          </div>
-          <div class="contact-item">
-            <span class="lang-el" data-id="contact-service-label">Service</span>
-            <p class="lang-el" data-id="contact-service-text">Wholesale export support for hair, nails, jewelry and K-beauty.</p>
-          </div>
+          <div class="contact-item"><span class="lang-el" data-id="contact-email-label">Email</span><a href="mailto:info@heglobalascent.com">info@heglobalascent.com</a></div>
+          <div class="contact-item"><span class="lang-el" data-id="contact-phone-label">Phone</span><span class="lang-el" data-id="contact-phone-text">1-201-346-2002 (US Office)</span></div>
+          <div class="contact-item"><span class="lang-el" data-id="contact-address-label">Address</span><span class="lang-el" data-id="contact-address-text-us">130 Wesley Street, South Hackensack, <BR>NJ 07606 (US Office)</span></div>
+          <div class="contact-item"><span class="lang-el" data-id="contact-address-label">Address</span><span class="lang-el" data-id="contact-address-text-sp">Calle Pradillos 7<br>Los Molinos, Madrid<br>Spain 28460 (Spain Office)</span></div>
+          <div class="contact-item"><span class="lang-el" data-id="contact-service-label">Service</span><p class="lang-el" data-id="contact-service-text">Wholesale export support for hair, nails, jewelry and K-beauty.</p></div>
         </div>
       </div>
     </section>
@@ -686,146 +257,107 @@
   <footer class="footer">
     <div class="container footer-inner">
       <p>© <span id="year"></span> HE Global Ascent. <span class="lang-el" data-id="footer-rights">All rights reserved.</span></p>
+      <div class="footer-legal">
+        <a href="es/aviso-legal/index.html" class="lang-el" data-id="footer-legal-notice">Legal Notice</a>
+        <a href="es/politica-de-privacidad/index.html" class="lang-el" data-id="footer-privacy">Privacy Policy</a>
+        <a href="es/politica-de-cookies/index.html" class="lang-el" data-id="footer-cookies">Cookie Policy</a>
+      </div>
     </div>
   </footer>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        <span class="lang-el" data-id="cookie-text">We use strictly necessary cookies to ensure our website functions correctly.</span>
+        <a href="es/politica-de-cookies/index.html" class="lang-el" data-id="cookie-link" style="text-decoration: underline; color: var(--gold);">Read Cookie Policy</a>
+      </p>
+      <button onclick="acceptCookies()" class="btn btn-dark lang-el" data-id="cookie-btn" style="padding: 8px 16px; font-size: 13px;">Accept</button>
+    </div>
+  </div>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const translations = {
       en: {
-        "brand-subtitle": "Wholesale Export Partner",
-        "nav-products": "Products",
-        "nav-about": "About",
-        "nav-process": "Process",
-        "nav-contact": "Contact",
-        "hero-eyebrow": "Global Beauty & Fashion Export",
-        "hero-h1": "Wholesale",
-        "hero-h2": "sourcing for overseas beauty and fashion retailers.",
+        "brand-subtitle": "Wholesale Export Partner", "nav-products": "Products", "nav-about": "About", "nav-process": "Process", "nav-contact": "Contact",
+        "hero-eyebrow": "Global Beauty & Fashion Export", "hero-h1": "Wholesale", "hero-h2": "sourcing for overseas beauty and fashion retailers.",
         "hero-text": "HE Global Ascent supplies hair extensions, nail-related products, affordable custom fashion jewelry, and <strong>trending K-Beauty cosmetics</strong> for international buyers, boutiques, salons, beauty supply stores, and distributors.",
-        "hero-btn-inquiry": "Start Wholesale Inquiry",
-        "hero-btn-range": "View Product Range",
-        "card-small": "Export Ready",
-        "card-h2": "· Hair · Nails <br> · Jewelry <br>· K-Beauty",
-        "card-p": "Reliable sourcing support for growing overseas businesses.",
-        "stat-b2b-label": "B2B",
-        "stat-b2b-text": "Wholesale-focused service",
-        "stat-global-label": "Global",
-        "stat-global-text": "Support for overseas buyers",
-        "products-label": "Product Range",
-        "products-h2": "Practical wholesale categories for fast-moving markets.",
-        "products-text": "We focus on product categories that are easy for retailers, salons, boutiques, and online stores to introduce to their customers.",
-        "p1-h3": "Hair Extensions",
-        "p1-p": "Wholesale sourcing for hair extensions, wigs, braiding hair, bundles, and beauty-related hair products for international retailers.",
-        "p2-h3": "Nail Products",
-        "p2-p": "Nail-related wholesale items including press-on nails, nail accessories, tools, salon supplies, and trend-based beauty products.",
-        "p3-h3": "Custom Jewelry",
-        "p3-p": "Affordable fashion earrings, necklaces, bracelets, jewelry sets, and custom accessory sourcing for boutiques and online stores.",
-        "p4-h3": "K-Beauty",
-        "p4-p": "Leading Korean skincare, innovative cosmetics, and trending beauty brands curated for the European and Latin American markets.",
-        "about-label": "About Us",
-        "about-h2": "A simple and reliable export partner for growing businesses.",
+        "hero-btn-inquiry": "Start Wholesale Inquiry", "hero-btn-range": "View Product Range", "card-small": "Export Ready", "card-h2": "· Hair · Nails <br> · Jewelry <br>· K-Beauty", "card-p": "Reliable sourcing support for growing overseas businesses.",
+        "stat-b2b-label": "B2B", "stat-b2b-text": "Wholesale-focused service", "stat-global-label": "Global", "stat-global-text": "Support for overseas buyers",
+        "products-label": "Product Range", "products-h2": "Practical wholesale categories for fast-moving markets.", "products-text": "We focus on product categories that are easy for retailers, salons, boutiques, and online stores to introduce to their customers.",
+        "p1-h3": "Hair Extensions", "p1-p": "Wholesale sourcing for hair extensions, wigs, braiding hair, bundles, and beauty-related hair products for international retailers.",
+        "p2-h3": "Nail Products", "p2-p": "Nail-related wholesale items including press-on nails, nail accessories, tools, salon supplies, and trend-based beauty products.",
+        "p3-h3": "Custom Jewelry", "p3-p": "Affordable fashion earrings, necklaces, bracelets, jewelry sets, and custom accessory sourcing for boutiques and online stores.",
+        "p4-h3": "K-Beauty", "p4-p": "Leading Korean skincare, innovative cosmetics, and trending beauty brands curated for the European and Latin American markets.",
+        "about-label": "About Us", "about-h2": "A simple and reliable export partner for growing businesses.",
         "about-p1": "HE Global Ascent is a trusted and reliable export partner for growing businesses entering the European and Latin American markets.",
         "about-p2": "We help overseas buyers find suitable beauty and fashion products through clear communication, flexible wholesale support, and export-ready preparation.",
         "about-p3": "Our goal is to make product sourcing easier for international retailers by supporting product selection, quotations, order preparation, shipment coordination, and market entry strategy for Europe and Latin America.",
-        "process-label": "How It Works",
-        "process-h2": "From product inquiry to shipment preparation.",
-        "step1-h3": "Send Inquiry",
-        "step1-p": "Tell us your product type, quantity range, destination country, and target budget.",
-        "step2-h3": "Review Options",
-        "step2-p": "We review your request and prepare suitable product or sourcing options.",
-        "step3-h3": "Confirm Order",
-        "step3-p": "Finalize product details, packaging needs, quantity, and shipping requirements.",
-        "step4-h3": "Prepare Export",
-        "step4-p": "We assist with order preparation, inspection, and export shipment coordination.",
-        "contact-label": "Contact",
-        "contact-h2": "Ready to request a wholesale quote?",
-        "contact-btn": "Email Us",
-        "contact-email-label": "Email",
-        "contact-phone-label": "Phone",
-        "contact-phone-text": "1-201-346-2002 (US Office)",
-        "contact-address-label": "Address",
-        "contact-address-text-us": "130 Wesley Street, South Hackensack, <BR>NJ 07606 (US Office)",
-        "contact-address-text-sp": "Calle Pradillos 7, Los Molinos, Madrid<br>Spain 28460 (Spain Office)",
-        "contact-service-label": "Service",
-        "contact-service-text": "Wholesale export support for hair, nails, jewelry and K-beauty.",
-        "footer-rights": "All rights reserved."
+        "process-label": "How It Works", "process-h2": "From product inquiry to shipment preparation.",
+        "step1-h3": "Send Inquiry", "step1-p": "Tell us your product type, quantity range, destination country, and target budget.",
+        "step2-h3": "Review Options", "step2-p": "We review your request and prepare suitable product or sourcing options.",
+        "step3-h3": "Confirm Order", "step3-p": "Finalize product details, packaging needs, quantity, and shipping requirements.",
+        "step4-h3": "Prepare Export", "step4-p": "We assist with order preparation, inspection, and export shipment coordination.",
+        "contact-label": "Contact", "contact-h2": "Ready to request a wholesale quote?", "contact-btn": "Email Us", "contact-email-label": "Email",
+        "contact-phone-label": "Phone", "contact-phone-text": "1-201-346-2002 (US Office)", "contact-address-label": "Address",
+        "contact-address-text-us": "130 Wesley Street, South Hackensack, <BR>NJ 07606 (US Office)", "contact-address-text-sp": "Calle Pradillos 7, Los Molinos, Madrid<br>Spain 28460 (Spain Office)",
+        "contact-service-label": "Service", "contact-service-text": "Wholesale export support for hair, nails, jewelry and K-beauty.",
+        "footer-rights": "All rights reserved.", "footer-legal-notice": "Legal Notice", "footer-privacy": "Privacy Policy", "footer-cookies": "Cookie Policy",
+        "cookie-text": "We use strictly necessary cookies to ensure our website functions correctly.", "cookie-link": "Read Cookie Policy", "cookie-btn": "Accept"
       },
       es: {
-        "brand-subtitle": "Socio de Exportación al por Mayor",
-        "nav-products": "Productos",
-        "nav-about": "Nosotros",
-        "nav-process": "Proceso",
-        "nav-contact": "Contacto",
-        "hero-eyebrow": "Exportación Global de Belleza y Moda",
-        "hero-h1": "Venta al por mayor",
-        "hero-h2": "abastecimiento para minoristas de belleza y moda en el extranjero.",
-        "hero-text": "HE Global Ascent suministra extensiones de cabello, productos para uñas, joyería de moda personalizada asequible y <strong>cosméticos K-Beauty en tendencia</strong> para compradores internacionales, boutiques, salones, tiendas de suministros de belleza y distribuidores.",
-        "hero-btn-inquiry": "Iniciar consulta al por mayor",
-        "hero-btn-range": "Ver gama de productos",
-        "card-small": "Listo para exportación",
-        "card-h2": "· Cabello · Uñas <br> · Joyería <br>· K-Beauty",
-        "card-p": "Soporte de abastecimiento confiable para negocios en crecimiento en el extranjero.",
-        "stat-b2b-label": "B2B",
-        "stat-b2b-text": "Servicio enfocado al por mayor",
-        "stat-global-label": "Global",
-        "stat-global-text": "Soporte para compradores en el extranjero",
-        "products-label": "Gama de productos",
-        "products-h2": "Categorías prácticas al por mayor para mercados de rápido movimiento.",
-        "products-text": "Nos enfocamos en categorías de productos que son fáciles de introducir para minoristas, salones, boutiques y tiendas en línea para sus clientes.",
-        "p1-h3": "Extensiones de cabello",
-        "p1-p": "Abastecimiento al por mayor de extensiones de cabello, pelucas, cabello para trenzar, paquetes y productos para el cabello relacionados con la belleza para minoristas internacionales.",
-        "p2-h3": "Productos para uñas",
-        "p2-p": "Artículos al por mayor relacionados con las uñas, incluyendo uñas postizas, accesorios para uñas, herramientas, suministros para salones y productos de belleza basados en tendencias.",
-        "p3-h3": "Joyería personalizada",
-        "p3-p": "Aretes, collares, pulseras, juegos de joyería de moda asequibles y abastecimiento de accesorios personalizados para boutiques y tiendas en línea.",
-        "p4-h3": "K-Beauty",
-        "p4-p": "Cuidado de la piel coreano líder, cosméticos innovadores y marcas de belleza en tendencia seleccionadas para los mercados europeo y latinoamericano.",
-        "about-label": "Sobre nosotros",
-        "about-h2": "Un socio de exportación simple y confiable para negocios en crecimiento.",
-        "about-p1": "HE Global Ascent es un socio de exportación confiable para negocios en crecimiento que ingresan a los mercados europeo y latinoamericano.",
-        "about-p2": "Ayudamos a los compradores extranjeros a encontrar productos de belleza y moda adecuados a través de una comunicación clara, soporte flexible al por mayor y preparación lista para la exportación.",
-        "about-p3": "Nuestro objetivo es facilitar el abastecimiento de productos para los minoristas internacionales mediante el apoyo en la selección de productos, cotizaciones, preparación de pedidos, coordinación de envíos y estrategia de entrada al mercado para Europa y América Latina.",
-        "process-label": "Cómo funciona",
-        "process-h2": "Desde la consulta del producto hasta la preparación del envío.",
-        "step1-h3": "Enviar consulta",
-        "step1-p": "Díganos su tipo de producto, rango de cantidad, país de destino y presupuesto objetivo.",
-        "step2-h3": "Revisar opciones",
-        "step2-p": "Revisamos su solicitud y preparamos opciones de productos o abastecimiento adecuadas.",
-        "step3-h3": "Confirmar pedido",
-        "step3-p": "Finalice los detalles del producto, las necesidades de empaque, la cantidad y los requisitos de envío.",
-        "step4-h3": "Preparar exportación",
-        "step4-p": "Asistimos con la preparación del pedido, la inspección y la coordinación del envío de exportación.",
-        "contact-label": "Contacto",
-        "contact-h2": "¿Listo para solicitar una cotización al por mayor?",
-        "contact-btn": "Envíanos un correo",
-        "contact-email-label": "Correo",
-        "contact-phone-label": "Teléfono",
-        "contact-phone-text": "1-201-346-2002 (Oficina EE. UU.)",
-        "contact-address-label": "Dirección",
-        "contact-address-text-us": "130 Wesley Street, South Hackensack, <BR>NJ 07606 (Oficina EE. UU.)",
-        "contact-address-text-sp": "Calle Pradillos 7, Los Molinos, Madrid<br>España 28460 (Oficina de España)",
-        "contact-service-label": "Service",
-        "contact-service-text": "Soporte de exportación al por mayor para cabello, uñas, joyería y K-beauty.",
-        "footer-rights": "Todos los derechos reservados."
+        "brand-subtitle": "Socio de exportación mayorista", "nav-products": "Productos", "nav-about": "Sobre nosotros / Sobre la empresa", "nav-process": "Proceso", "nav-contact": "Contacto",
+        "hero-eyebrow": "Exportación de productos de belleza y moda a escala global", "hero-h1": "Venta al por mayor", "hero-h2": "Abastecimiento a minoristas internacionales de productos de belleza y moda.",
+        "hero-text": "HE Global Ascent suministra extensiones de cabello, productos para uñas, bisutería personalizada a precios asequibles y cosméticos K-Beauty de moda a compradores internacionales, boutiques, salones, tiendas de productos de belleza y distribuidores.",
+        "hero-btn-inquiry": "Solicitar información sobre venta al por mayor", "hero-btn-range": "Ver gama de productos", "card-small": "Listos para exportar", "card-h2": "· Cabello · Uñas · Bisutería <br>· K-Beauty", "card-p": "Recurso de abastecimiento fiable para negocios internacionales en crecimiento",
+        "stat-b2b-label": "B2B", "stat-b2b-text": "Servicio enfocado al suministro B2B al por mayor", "stat-global-label": "Global", "stat-global-text": "Atención a compradores internacionales",
+        "products-label": "Gama de productos", "products-h2": "Categorías mayoristas adecuadas para mercados de alta rotación.", "products-text": "Nos centramos en categorías de producto de venta rápida por minoristas, salones de estética, boutiques y tiendas online a sus clientes.",
+        "p1-h3": "Extensiones de cabello", "p1-p": "Abastecimiento al por mayor de extensiones de cabello, pelucas, cabello para trenzas, mechones (bundles) y productos capilares de belleza para minoristas internacionales.",
+        "p2-h3": "Productos para uñas", "p2-p": "Artículos al por mayor para uñas: uñas adhesivas, accesorios de uñas, herramientas, material.",
+        "p3-h3": "Bisutería personalizada", "p3-p": "Pendientes, collares, pulseras, conjuntos de bisutería de moda y accesorios personalizados a precios asequibles para boutiques y tiendas online.",
+        "p4-h3": "K-Beauty", "p4-p": "Cuidado de la piel coreano líder, cosméticos innovadores y marcas de belleza en tendencia seleccionadas para los mercados europeo y latinoamericano.",
+        "about-label": "Sobre nosotros / Sobre la empresa", "about-h2": "Un socio de exportación sencillo y fiable para negocios en crecimiento.",
+        "about-p1": "HE Global Ascent es un socio de exportación fiable para negocios en crecimiento que entran en los mercados europeo y latinoamericano.",
+        "about-p2": "Ayudamos a compradores internacionales a encontrar los productos de belleza y moda adecuados mediante una comunicación clara, un soporte mayorista flexible y una preparación orientada a ultimar cada detalle para la exportación.",
+        "about-p3": "Nuestro objetivo es facilitar el abastecimiento de productos a minoristas internacionales apoyándoles en la selección de productos, elaboración de presupuestos, preparación de pedidos, coordinación de envíos y estrategia de entrada al mercado europeo y latinoamericano.",
+        "process-label": "Cómo funciona", "process-h2": "De la consulta inicial a la preparación del envío.",
+        "step1-h3": "Enviar consulta", "step1-p": "Indíquenos el tipo de producto, rango de cantidad, país de destino y presupuesto estimado.",
+        "step2-h3": "Revisar opciones", "step2-p": "Revisamos su solicitud y preparamos las opciones de producto o abastecimiento más adecuadas.",
+        "step3-h3": "Confirmar pedido", "step3-p": "Complete su solicitud con los detalles del producto, los requisitos de embalaje, la cantidad exacta y las condiciones de envío.",
+        "step4-h3": "Preparar exportación", "step4-p": "Le apoyamos en la preparación del pedido, la inspección y la coordinación del envío.",
+        "contact-label": "Contacto", "contact-h2": "¿Listo para solicitar un presupuesto mayorista?", "contact-btn": "Escríbanos", "contact-email-label": "Correo electrónico",
+        "contact-phone-label": "Teléfono", "contact-phone-text": "1-201-346-2002 (Oficina EE. UU.)", "contact-address-label": "Dirección",
+        "contact-address-text-us": "130 Wesley Street, South Hackensack, <BR>NJ 07606 (Oficina EE. UU.)", "contact-address-text-sp": "Calle Pradillos 7, Los Molinos, Madrid<br>España 28460 (Oficina de España)",
+        "contact-service-label": "Servicio", "contact-service-text": "Soporte de exportación mayorista para productos relacionados con el cabello, las uñas y bisutería.",
+        "footer-rights": "Todos los derechos reservados.", "footer-legal-notice": "Aviso Legal", "footer-privacy": "Política de Privacidad", "footer-cookies": "Política de Cookies",
+        "cookie-text": "Utilizamos cookies estrictamente necesarias para el correcto funcionamiento del sitio.", "cookie-link": "Leer Política de Cookies", "cookie-btn": "Aceptar"
       }
     };
 
     function setLanguage(lang) {
       document.querySelectorAll('.lang-el').forEach(el => {
         const id = el.getAttribute('data-id');
-        if (translations[lang][id]) {
-          el.innerHTML = translations[lang][id];
-        }
+        if (translations[lang] && translations[lang][id]) { el.innerHTML = translations[lang][id]; }
       });
-      
-      // Update buttons
       document.getElementById('btn-en').classList.remove('active');
       document.getElementById('btn-es').classList.remove('active');
       document.getElementById(`btn-${lang}`).classList.add('active');
-      
-      // Update HTML lang attribute
       document.documentElement.lang = lang;
+      localStorage.setItem('preferredLang', lang);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const savedLang = localStorage.getItem('preferredLang') || 'en';
+      setLanguage(savedLang);
+      if (!localStorage.getItem("cookiesAccepted")) {
+        document.getElementById("cookie-banner").style.display = "flex";
+      }
+    });
+
+    function acceptCookies() {
+      localStorage.setItem("cookiesAccepted", "true");
+      document.getElementById("cookie-banner").style.display = "none";
     }
   </script>
 </body>

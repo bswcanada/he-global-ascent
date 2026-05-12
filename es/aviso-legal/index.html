@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal Notice | HE Global Ascent</title>
+  <style>
+    :root { --bg: #f7f4ef; --card: #ffffff; --text: #1c1917; --muted: #6b625b; --line: #e7dfd5; --dark: #181512; --gold: #c9a66b; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(800px, calc(100% - 40px)); margin: 0 auto; }
+    .site-header { background: #fff; border-bottom: 1px solid var(--line); padding: 15px 0; position: sticky; top: 0; z-index: 10; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; }
+    
+    main { flex: 1; }
+    .legal-content { background: var(--card); padding: 50px; border-radius: 22px; box-shadow: 0 18px 45px rgba(28,25,23,0.05); margin: 40px auto; }
+    h1 { font-size: 32px; margin-bottom: 30px; letter-spacing: -0.03em; }
+    h2 { font-size: 20px; margin-top: 30px; margin-bottom: 10px; color: var(--dark); }
+    p, ul { color: var(--muted); font-size: 15px; margin-bottom: 16px; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
+    .highlight { background-color: yellow; color: red; font-weight: bold; padding: 0 4px; }
+    .lang-switcher { display: flex; gap: 8px; font-size: 13px; font-weight: 700; color: var(--muted); }
+    .lang-btn { background: none; border: none; cursor: pointer; padding: 4px 8px; color: var(--muted); }
+    .lang-btn.active { color: var(--gold); text-decoration: underline; }
+    
+    /* Footer added to legal pages */
+    .footer { padding: 42px 0; background: #fff; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; margin-top: 40px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .footer-legal { display: flex; gap: 20px; font-size: 13px; }
+    .footer-legal a:hover { color: var(--gold); text-decoration: underline; }
+
+    @media (max-width: 620px) { .legal-content { padding: 30px 20px; } }
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="lang-el" data-id="back-home" style="font-weight: bold; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;">&larr; Back to Home</a>
+      <div class="lang-switcher">
+        <button onclick="setLanguage('en')" id="btn-en" class="lang-btn">EN</button>
+        <span>|</span>
+        <button onclick="setLanguage('es')" id="btn-es" class="lang-btn">ES</button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <div class="legal-content">
+      <h1 class="lang-el" data-id="title">Legal Notice</h1>
+      <h2 class="lang-el" data-id="s1-title">1. WEBSITE OWNER</h2>
+      <p class="lang-el" data-id="s1-p">In compliance with Article 10 of Law 34/2002, of July 11, on Information Society Services and Electronic Commerce (LSSI-CE), the following data represents the owner of this website:</p>
+      <ul>
+        <li><strong class="lang-el" data-id="s1-name">Company Name:</strong> BSW PPF GROUP </li>
+        <li><strong class="lang-el" data-id="s1-address">Registered Address:</strong> 130 Wesley Street, South Hackensack, NJ 07606, USA</li>
+        <li><strong class="lang-el" data-id="s1-tax">Tax ID / EIN:</strong> <span class="highlight">▶ [미국 사업자번호 EIN]</span></li>
+        <li><strong class="lang-el" data-id="s1-email">Email:</strong> info@heglobalascent.com</li>
+        <li><strong class="lang-el" data-id="s1-phone">Phone:</strong> 1-201-346-2002</li>
+      </ul>
+      <h2 class="lang-el" data-id="s2-title">2. PURPOSE</h2>
+      <p class="lang-el" data-id="s2-p">The purpose of this website is to provide information about the wholesale export services provided by HE Gobal Ascent to international buyers.</p>
+      <h2 class="lang-el" data-id="s3-title">3. INTELLECTUAL PROPERTY</h2>
+      <p class="lang-el" data-id="s3-p">All contents of the website are the property of <span class="highlight">HE Gobal Ascent</span> or third parties who have authorized their use. Reproduction without authorization is prohibited.</p>
+      <h2 class="lang-el" data-id="s4-title">4. DISCLAIMER</h2>
+      <p class="lang-el" data-id="s4-p1">HE Gobal Ascent is not responsible for damages resulting from the use of this website. The contents are informative and do not constitute a binding offer.</p>
+      <p class="lang-el" data-id="s4-p2">We do not guarantee the uninterrupted availability of the website.</p>
+      <h2 class="lang-el" data-id="s5-title">5. THIRD-PARTY LINKS</h2>
+      <p class="lang-el" data-id="s5-p">This website may contain links to third parties. HE Gobal Ascent is not responsible for such sites.</p>
+      <h2 class="lang-el" data-id="s6-title">6. APPLICABLE LAW AND JURISDICTION</h2>
+      <p class="lang-el" data-id="s6-p">For EU users, these conditions will be interpreted according to EU regulations. Any dispute will be submitted to the Courts of <span class="highlight">▶ [관할 도시]</span>.</p>
+      <p style="margin-top: 30px;"><strong class="lang-el" data-id="updated">Last update:</strong> 2026-05-12</p>
+    </div>
+  </main>
+  
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> HE Global Ascent. <span class="lang-el" data-id="footer-rights">All rights reserved.</span></p>
+      <div class="footer-legal">
+        <a href="../aviso-legal/index.html" class="lang-el" data-id="footer-legal-notice">Legal Notice</a>
+        <a href="../politica-de-privacidad/index.html" class="lang-el" data-id="footer-privacy">Privacy Policy</a>
+        <a href="../politica-de-cookies/index.html" class="lang-el" data-id="footer-cookies">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        "back-home": "← Back to Home", "title": "Legal Notice",
+        "s1-title": "1. WEBSITE OWNER", "s1-p": "In compliance with Article 10 of Law 34/2002, of July 11, on Information Society Services and Electronic Commerce (LSSI-CE), the following data represents the owner of this website:",
+        "s1-name": "Company Name:", "s1-address": "Registered Address:", "s1-tax": "Tax ID / EIN:", "s1-email": "Email:", "s1-phone": "Phone:",
+        "s2-title": "2. PURPOSE", "s2-p": "The purpose of this website is to provide information about the wholesale export services provided by HE Gobal Ascent] to international buyers.",
+        "s3-title": "3. INTELLECTUAL PROPERTY", "s3-p": "All contents of the website are the property of HE Gobal Ascent or third parties who have authorized their use. Reproduction without authorization is prohibited.",
+        "s4-title": "4. DISCLAIMER", "s4-p1": "▶ [회사명] is not responsible for damages resulting from the use of this website. The contents are informative and do not constitute a binding offer.", "s4-p2": "We do not guarantee the uninterrupted availability of the website.",
+        "s5-title": "5. THIRD-PARTY LINKS", "s5-p": "This website may contain links to third parties. HE Gobal Ascent is not responsible for such sites.",
+        "s6-title": "6. APPLICABLE LAW AND JURISDICTION", "s6-p": "For EU users, these conditions will be interpreted according to EU regulations. Any dispute will be submitted to the Courts of ▶ [관할 도시].",
+        "updated": "Last update:",
+        "footer-rights": "All rights reserved.", "footer-legal-notice": "Legal Notice", "footer-privacy": "Privacy Policy", "footer-cookies": "Cookie Policy"
+      },
+      es: {
+        "back-home": "← Volver a Inicio", "title": "Aviso Legal",
+        "s1-title": "1. TITULAR DEL SITIO WEB", "s1-p": "En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa de los datos del titular del presente sitio web:",
+        "s1-name": "Denominación social:", "s1-address": "Domicilio social:", "s1-tax": "NIF / EIN:", "s1-email": "Correo electrónico:", "s1-phone": "Teléfono:",
+        "s2-title": "2. OBJETO", "s2-p": "El presente sitio web tiene como finalidad ofrecer información sobre los servicios de exportación mayorista prestados por HE Gobal Ascent a compradores internacionales.",
+        "s3-title": "3. PROPIEDAD INTELECTUAL E INDUSTRIAL", "s3-p": "Todos los contenidos del sitio web son propiedad de HE Gobal Ascent o de terceros que han autorizado su uso. Queda prohibida su reproducción sin autorización.",
+        "s4-title": "4. EXENCIÓN DE RESPONSABILIDAD", "s4-p1": "HE Global Ascent no se responsabiliza de los daños que pudieran derivarse del uso de esta web. Los contenidos son informativos y no constituyen oferta vinculante.", "s4-p2": "No se garantiza la disponibilidad ininterrumpida del sitio web.",
+        "s5-title": "5. ENLACES A SITIOS DE TERCEROS", "s5-p": "Este sitio web puede contener enlaces a terceros. HE Gobal Ascent no se hace responsable de dichos sitios.",
+        "s6-title": "6. LEGISLACIÓN APLICABLE Y JURISDICCIÓN", "s6-p": "Para usuarios en la UE, las condiciones se interpretarán conforme a la normativa de la UE. Cualquier controversia se someterá a los Juzgados de ▶ [관할 도시].",
+        "updated": "Última actualización:",
+        "footer-rights": "Todos los derechos reservados.", "footer-legal-notice": "Aviso Legal", "footer-privacy": "Política de Privacidad", "footer-cookies": "Política de Cookies"
+      }
+    };
+
+    function setLanguage(lang) {
+      document.querySelectorAll('.lang-el').forEach(el => {
+        const id = el.getAttribute('data-id');
+        if (translations[lang] && translations[lang][id]) el.innerHTML = translations[lang][id];
+      });
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.documentElement.lang = lang;
+      localStorage.setItem('preferredLang', lang);
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+      const savedLang = localStorage.getItem('preferredLang') || 'en';
+      setLanguage(savedLang);
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+
+  </script>
+</body>
+</html>

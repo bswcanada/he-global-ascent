@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | HE Global Ascent</title>
+  <style>
+    :root { --bg: #f7f4ef; --card: #ffffff; --text: #1c1917; --muted: #6b625b; --line: #e7dfd5; --dark: #181512; --gold: #c9a66b; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(800px, calc(100% - 40px)); margin: 0 auto; }
+    .site-header { background: #fff; border-bottom: 1px solid var(--line); padding: 15px 0; position: sticky; top: 0; z-index: 10; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; }
+    
+    main { flex: 1; }
+    .legal-content { background: var(--card); padding: 50px; border-radius: 22px; box-shadow: 0 18px 45px rgba(28,25,23,0.05); margin: 40px auto; }
+    h1 { font-size: 32px; margin-bottom: 30px; letter-spacing: -0.03em; }
+    h2 { font-size: 20px; margin-top: 30px; margin-bottom: 10px; color: var(--dark); }
+    p, ul { color: var(--muted); font-size: 15px; margin-bottom: 16px; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
+    .highlight { background-color: yellow; color: red; font-weight: bold; padding: 0 4px; }
+    .lang-switcher { display: flex; gap: 8px; font-size: 13px; font-weight: 700; color: var(--muted); }
+    .lang-btn { background: none; border: none; cursor: pointer; padding: 4px 8px; color: var(--muted); }
+    .lang-btn.active { color: var(--gold); text-decoration: underline; }
+    
+    /* Footer added to legal pages */
+    .footer { padding: 42px 0; background: #fff; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; margin-top: 40px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .footer-legal { display: flex; gap: 20px; font-size: 13px; }
+    .footer-legal a:hover { color: var(--gold); text-decoration: underline; }
+
+    @media (max-width: 620px) { .legal-content { padding: 30px 20px; } }
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="lang-el" data-id="back-home" style="font-weight: bold; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;">&larr; Back to Home</a>
+      <div class="lang-switcher">
+        <button onclick="setLanguage('en')" id="btn-en" class="lang-btn">EN</button>
+        <span>|</span>
+        <button onclick="setLanguage('es')" id="btn-es" class="lang-btn">ES</button>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <div class="legal-content">
+      <h1 class="lang-el" data-id="title">Privacy Policy</h1>
+      <h2 class="lang-el" data-id="s1-title">1. DATA CONTROLLER</h2>
+      <ul>
+        <li><strong class="lang-el" data-id="s1-id">Identity:</strong> HE Global Ascent</li>
+        <li><strong class="lang-el" data-id="s1-addr">Address:</strong> 130 Wesley Street, South Hackensack, NJ 07606, USA</li>
+        <li><strong class="lang-el" data-id="s1-mail">Email:</strong> info@heglobalascent.com</li>
+      </ul>
+      <h2 class="lang-el" data-id="s2-title">2. DATA WE COLLECT</h2>
+      <p class="lang-el" data-id="s2-p">When you contact us, we collect: Name, Email, Phone, Company, and any information you include in your inquiry.</p>
+      <h2 class="lang-el" data-id="s3-title">3. PURPOSE OF TREATMENT</h2>
+      <p class="lang-el" data-id="s3-p">Personal data is used to: Respond to business inquiries, manage wholesale quotes, and maintain commercial relations.</p>
+      <h2 class="lang-el" data-id="s4-title">4. LEGAL BASIS</h2>
+      <p class="lang-el" data-id="s4-p">The legal basis is your consent when sending the inquiry (Art. 6.1.a GDPR) and legitimate interest in managing the commercial relationship (Art. 6.1.f GDPR).</p>
+      <h2 class="lang-el" data-id="s5-title">5. DATA RETENTION</h2>
+      <p class="lang-el" data-id="s5-p">Data will be kept for the time necessary to attend to your request and comply with legal deadlines.</p>
+      <h2 class="lang-el" data-id="s6-title">6. INTERNATIONAL TRANSFERS</h2>
+      <p class="lang-el" data-id="s6-p">Our headquarters are in the USA. Data from EU users may be transferred outside the EEA under appropriate safeguards (SCC) provided in the GDPR.</p>
+      <h2 class="lang-el" data-id="s7-title">7. YOUR RIGHTS</h2>
+      <p class="lang-el" data-id="s7-p">You can access, rectify, delete, limit, or oppose processing by emailing info@heglobalascent.com. You can also file a claim with the AEPD (www.aepd.es).</p>
+      <h2 class="lang-el" data-id="s8-title">8. SECURITY</h2>
+      <p class="lang-el" data-id="s8-p">HE Global Ascent applies appropriate technical measures to guarantee data security in accordance with Art. 32 GDPR.</p>
+      <p style="margin-top: 30px;"><strong class="lang-el" data-id="updated">Last update:</strong> 2026-05-12</p>
+    </div>
+  </main>
+  
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> HE Global Ascent. <span class="lang-el" data-id="footer-rights">All rights reserved.</span></p>
+      <div class="footer-legal">
+        <a href="../aviso-legal/index.html" class="lang-el" data-id="footer-legal-notice">Legal Notice</a>
+        <a href="../politica-de-privacidad/index.html" class="lang-el" data-id="footer-privacy">Privacy Policy</a>
+        <a href="../politica-de-cookies/index.html" class="lang-el" data-id="footer-cookies">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        "back-home": "← Back to Home", "title": "Privacy Policy",
+        "s1-title": "1. DATA CONTROLLER", "s1-id": "Identity:", "s1-addr": "Address:", "s1-mail": "Email:",
+        "s2-title": "2. DATA WE COLLECT", "s2-p": "When you contact us, we collect: Name, Email, Phone, Company, and any information you include in your inquiry.",
+        "s3-title": "3. PURPOSE OF TREATMENT", "s3-p": "Personal data is used to: Respond to business inquiries, manage wholesale quotes, and maintain commercial relations.",
+        "s4-title": "4. LEGAL BASIS", "s4-p": "The legal basis is your consent when sending the inquiry (Art. 6.1.a GDPR) and legitimate interest in managing the commercial relationship (Art. 6.1.f GDPR).",
+        "s5-title": "5. DATA RETENTION", "s5-p": "Data will be kept for the time necessary to attend to your request and comply with legal deadlines.",
+        "s6-title": "6. INTERNATIONAL TRANSFERS", "s6-p": "Our headquarters are in the USA. Data from EU users may be transferred outside the EEA under appropriate safeguards (SCC) provided in the GDPR.",
+        "s7-title": "7. YOUR RIGHTS", "s7-p": "You can access, rectify, delete, limit, or oppose processing by emailing info@heglobalascent.com. You can also file a claim with the AEPD (www.aepd.es).",
+        "s8-title": "8. SECURITY", "s8-p": "HE Global Ascent applies appropriate technical measures to guarantee data security in accordance with Art. 32 GDPR.",
+        "updated": "Last update:",
+        "footer-rights": "All rights reserved.", "footer-legal-notice": "Legal Notice", "footer-privacy": "Privacy Policy", "footer-cookies": "Cookie Policy"
+      },
+      es: {
+        "back-home": "← Volver a Inicio", "title": "Política de Privacidad",
+        "s1-title": "1. RESPONSABLE DEL TRATAMIENTO", "s1-id": "Identidad:", "s1-addr": "Domicilio:", "s1-mail": "Correo electrónico:",
+        "s2-title": "2. DATOS QUE RECOPILAMOS", "s2-p": "Cuando se pone en contacto con nosotros, recopilamos: Nombre, Correo electrónico, Teléfono, Empresa y la información que incluya en su consulta.",
+        "s3-title": "3. FINALIDAD DEL TRATAMIENTO", "s3-p": "Los datos personales se utilizan para: Responder a consultas comerciales, gestionar presupuestos mayoristas y mantener la relación comercial.",
+        "s4-title": "4. BASE LEGAL DEL TRATAMIENTO", "s4-p": "La base legal es su consentimiento al enviar la consulta (art. 6.1.a RGPD) y el interés legítimo en gestionar la relación comercial (art. 6.1.f RGPD).",
+        "s5-title": "5. CONSERVACIÓN DE LOS DATOS", "s5-p": "Los datos se conservarán el tiempo necesario para atender su solicitud y cumplir plazos legales.",
+        "s6-title": "6. COMUNICACIÓN Y TRANSFERENCIA INTERNACIONAL", "s6-p": "Nuestra sede está en Estados Unidos. Los datos de usuarios de la UE pueden ser transferidos fuera del EEE bajo las garantías adecuadas (SCC) previstas en el RGPD.",
+        "s7-title": "7. DERECHOS DEL INTERESADO", "s7-p": "Puede acceder, rectificar, suprimir, limitar u oponerse al tratamiento enviando un email a info@heglobalascent.com. También puede reclamar ante la AEPD (www.aepd.es).",
+        "s8-title": "8. SEGURIDAD", "s8-p": "HE Global Ascent aplica medidas técnicas adecuadas para garantizar la seguridad de sus datos conforme al art. 32 RGPD.",
+        "updated": "Última actualización:",
+        "footer-rights": "Todos los derechos reservados.", "footer-legal-notice": "Aviso Legal", "footer-privacy": "Política de Privacidad", "footer-cookies": "Política de Cookies"
+      }
+    };
+
+    function setLanguage(lang) {
+      document.querySelectorAll('.lang-el').forEach(el => {
+        const id = el.getAttribute('data-id');
+        if (translations[lang] && translations[lang][id]) el.innerHTML = translations[lang][id];
+      });
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.documentElement.lang = lang;
+      localStorage.setItem('preferredLang', lang);
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+      const savedLang = localStorage.getItem('preferredLang') || 'en';
+      setLanguage(savedLang);
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+
+  </script>
+</body>
+</html>
