@@ -60,6 +60,47 @@
     }
     .btn-card-link:hover { background: var(--dark); color: #fff; border-color: var(--dark); }
 
+    /* Contact Form Styles */
+    .contact-form { 
+      display: flex; 
+      flex-direction: column; 
+      gap: 16px; 
+      margin-top: 24px; 
+      max-width: 480px; 
+    }
+    .form-group { 
+      display: flex; 
+      flex-direction: column; 
+      gap: 6px; 
+    }
+    .form-label { 
+      color: var(--soft-gold); 
+      font-size: 13px; 
+      font-weight: 700; 
+    }
+    .form-input { 
+      padding: 14px 18px; 
+      border-radius: 16px; 
+      border: 1px solid rgba(255, 255, 255, 0.14); 
+      background: rgba(255, 255, 255, 0.05); 
+      color: #fff; 
+      font-family: inherit; 
+      font-size: 14px; 
+      transition: all 0.2s; 
+    }
+    .form-input:focus { 
+      outline: none; 
+      border-color: var(--gold); 
+      background: rgba(255, 255, 255, 0.1); 
+    }
+    .form-input::placeholder { 
+      color: rgba(255, 255, 255, 0.3); 
+    }
+    textarea.form-input { 
+      resize: vertical; 
+      min-height: 120px; 
+    }
+
     .hero { position: relative; overflow: hidden; padding: 92px 0 86px; }
     .hero-grid { position: relative; display: grid; grid-template-columns: 1.08fr 0.92fr; align-items: center; gap: 56px; }
     .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.68); border-radius: 999px; color: var(--muted); font-size: 13px; font-weight: 700; margin-bottom: 22px; }
@@ -109,7 +150,7 @@
   </style>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" id="top">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="HE Global Ascent Home">
         <img src="he-logo.png" alt="HE Global Ascent Logo" class="brand-logo" onerror="this.src='https://via.placeholder.com/52'">
@@ -132,7 +173,7 @@
     </div>
   </header>
 
-  <main id="top">
+  <main>
     <section class="hero">
       <div class="container hero-grid">
         <div>
@@ -143,7 +184,7 @@
             HE Global Ascent supplies hair extensions, nail-related products, affordable custom fashion jewelry, and <strong>trending K-Beauty cosmetics</strong> for international buyers, boutiques, salons, beauty supply stores, and distributors.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-dark lang-el" data-id="hero-btn-inquiry" href="mailto:info@heglobalascent.com?subject=Wholesale%20Inquiry%20-%20HE%20Global%20Ascent">Start Wholesale Inquiry</a>
+            <a class="btn btn-dark lang-el" data-id="hero-btn-inquiry" href="#contact">Start Wholesale Inquiry</a>
             <a class="btn btn-light lang-el" data-id="hero-btn-range" href="#products">View Product Range</a>
           </div>
           <div class="hero-image-strip" aria-hidden="true">
@@ -276,9 +317,32 @@
         <div>
           <div class="section-label lang-el" data-id="contact-label">Contact</div>
           <h2 class="lang-el" data-id="contact-h2">Ready to request a wholesale quote?</h2>
-          <div class="hero-actions">
-            <a class="btn btn-light lang-el" data-id="contact-btn" href="mailto:info@heglobalascent.com?subject=Wholesale%20Inquiry%20-%20HE%20Global%20Ascent">Email Us</a>
-          </div>
+          
+          <!-- Contact Form with Web3Forms -->
+          <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+            <!-- Web3Forms Access Key Input -->
+            <input type="hidden" name="access_key" value="7dd6996c-5881-4717-b542-31370543eb8d">
+            
+            <!-- Optional: Custom Subject Line -->
+            <input type="hidden" name="subject" value="New Wholesale Inquiry from HE Global Ascent Website">
+            
+            <!-- Optional: Redirect to a custom page after success (if you have one) -->
+            <!-- <input type="hidden" name="redirect" value="https://yourwebsite.com/thanks.html"> -->
+
+            <div class="form-group">
+              <label for="name" class="form-label lang-el" data-id="form-name">Name</label>
+              <input type="text" id="name" name="name" class="form-input" required placeholder="Your Name">
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label lang-el" data-id="form-email">Email</label>
+              <input type="email" id="email" name="email" class="form-input" required placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label for="memo" class="form-label lang-el" data-id="form-memo">Memo</label>
+              <textarea id="memo" name="memo" class="form-input" required placeholder="How can we help?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-light lang-el" data-id="form-send" style="align-self: flex-start; margin-top: 8px;">Send Message</button>
+          </form>
         </div>
         <div class="contact-box">
           <div class="contact-item"><span class="lang-el" data-id="contact-email-label">Email</span><a href="mailto:info@heglobalascent.com">info@heglobalascent.com</a></div>
@@ -341,10 +405,11 @@
         "contact-address-text-us": "130 Wesley Street, South Hackensack, <BR>NJ 07606 (US Office)", "contact-address-text-sp": "Calle Pradillos 7, Los Molinos, Madrid<br>Spain 28460 (Spain Office)",
         "contact-service-label": "Service", "contact-service-text": "Wholesale export support for hair, nails, jewelry and K-beauty.",
         "footer-rights": "All rights reserved.", "footer-legal-notice": "Legal Notice", "footer-privacy": "Privacy Policy", "footer-cookies": "Cookie Policy",
-        "cookie-text": "We use strictly necessary cookies to ensure our website functions correctly.", "cookie-link": "Read Cookie Policy", "cookie-btn": "Accept"
+        "cookie-text": "We use strictly necessary cookies to ensure our website functions correctly.", "cookie-link": "Read Cookie Policy", "cookie-btn": "Accept",
+        "form-name": "Name", "form-email": "Email", "form-memo": "Memo", "form-send": "Send Message"
       },
       es: {
-        "brand-subtitle": "Socio de exportación mayorista", "nav-products": "Productos", "nav-about": "Sobre nosotros / Sobre la empresa", "nav-process": "Proceso", "nav-contact": "Contacto",
+        "brand-subtitle": "Socio de exportación mayorista", "nav-products": "Productos", "nav-about": "Sobre nosotros", "nav-process": "Proceso", "nav-contact": "Contacto",
         "hero-eyebrow": "Exportación de productos de belleza y moda a escala global", "hero-h1": "Venta al por mayor", "hero-h2": "Abastecimiento a minoristas internacionales de productos de belleza y moda.",
         "hero-text": "HE Global Ascent suministra extensiones de cabello, productos para uñas, bisutería personalizada a precios asequibles y cosméticos K-Beauty de moda a compradores internacionales, boutiques, salones, tiendas de productos de belleza y distribuidores.",
         "hero-btn-inquiry": "Solicitar información sobre venta al por mayor", "hero-btn-range": "Ver gama de productos", "card-small": "Listos para exportar", "card-h2": "· Cabello · Uñas · Bisutería <br>· K-Beauty", "card-p": "Recurso de abastecimiento fiable para negocios internacionales en crecimiento",
@@ -369,7 +434,8 @@
         "contact-address-text-us": "130 Wesley Street, South Hackensack, <BR>NJ 07606 (Oficina EE. UU.)", "contact-address-text-sp": "Calle Pradillos 7, Los Molinos, Madrid<br>Spain 28460 (Oficina de España)",
         "contact-service-label": "Servicio", "contact-service-text": "Soporte de exportación mayorista para productos relacionados con el cabello, las uñas y bisutería.",
         "footer-rights": "Todos los derechos reservados.", "footer-legal-notice": "Aviso Legal", "footer-privacy": "Política de Privacidad", "footer-cookies": "Política de Cookies",
-        "cookie-text": "Utilizamos cookies estrictamente necesarias para el correcto funcionamiento del sitio.", "cookie-link": "Leer Política de Cookies", "cookie-btn": "Aceptar"
+        "cookie-text": "Utilizamos cookies estrictamente necesarias para el correcto funcionamiento del sitio.", "cookie-link": "Leer Política de Cookies", "cookie-btn": "Aceptar",
+        "form-name": "Nombre", "form-email": "Email", "form-memo": "Mensaje", "form-send": "Enviar mensaje"
       }
     };
     function setLanguage(lang) {
