@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nail Products Catalog | HE Global Ascent</title>
+  <style>
+    :root {
+      --bg: #f7f4ef;
+      --card: #ffffff;
+      --text: #1c1917;
+      --muted: #6b625b;
+      --line: #e7dfd5;
+      --dark: #181512;
+      --gold: #c9a66b;
+      --radius: 22px;
+      --shadow: 0 18px 45px rgba(28, 25, 23, 0.10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    
+    .site-header { background: rgba(247, 244, 239, 0.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); padding: 16px 0; position: sticky; top: 0; z-index: 20; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; }
+    .brand-name { font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; font-size: 16px; }
+    .back-link { font-size: 14px; font-weight: 600; color: var(--muted); display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+    .back-link:hover { color: var(--dark); }
+
+    .page-header { padding: 60px 0 40px; text-align: center; }
+    .page-title { font-size: clamp(32px, 5vw, 48px); letter-spacing: -0.04em; margin-bottom: 16px; }
+    .page-desc { color: var(--muted); font-size: 16px; max-width: 600px; margin: 0 auto; }
+
+    .catalog-grid { 
+      display: grid; 
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 30px; 
+      padding-bottom: 80px; 
+    }
+    
+    @media (max-width: 900px) {
+      .catalog-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .catalog-grid { grid-template-columns: 1fr; }
+    }
+
+    .product-card { 
+      background: var(--card); 
+      border: 1px solid var(--line); 
+      border-radius: 16px; 
+      overflow: hidden; 
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover { 
+      transform: translateY(-5px); 
+      box-shadow: var(--shadow); 
+    }
+    .product-image-wrapper {
+      width: 100%;
+      aspect-ratio: 1 / 1; 
+      background: #f0ece6;
+      overflow: hidden;
+    }
+    .product-img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      transition: transform 0.5s ease;
+    }
+    .product-card:hover .product-img {
+      transform: scale(1.05); 
+    }
+    .product-info { 
+      padding: 20px; 
+      text-align: center; 
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: center;
+    }
+    .product-name { 
+      font-size: 16px; 
+      font-weight: 700; 
+      color: var(--text); 
+      margin-bottom: 4px;
+    }
+    .product-category { 
+      font-size: 13px; 
+      color: var(--muted); 
+    }
+
+    .footer { padding: 40px 0; text-align: center; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-name">HE Global Ascent</div>
+      <a href="index.html" class="back-link">
+        &larr; Back to Home
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header container">
+      <h1 class="page-title">Nail Products Collection</h1>
+      <p class="page-desc">Explore our premium selection of nail supplies, press-on nails, and salon accessories designed for global retail markets.</p>
+    </section>
+
+    <section class="container catalog-grid">
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="nail_images/SASA%20NAILS%20%23G002.jpg" alt="SASA NAILS #G002" class="product-img" onerror="this.src='https://via.placeholder.com/400x400?text=SASA%20NAILS%20%23G002'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">SASA NAILS #G002</h2>
+          <span class="product-category">Press-on Nails</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="nail_images/SASA%20NAILS%20%23G011.jpg" alt="SASA NAILS #G011" class="product-img" onerror="this.src='https://via.placeholder.com/400x400?text=SASA%20NAILS%20%23G011'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">SASA NAILS #G011</h2>
+          <span class="product-category">Press-on Nails</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="nail_images/SASA%20NAILS%20%23G019.jpg" alt="SASA NAILS #G019" class="product-img" onerror="this.src='https://via.placeholder.com/400x400?text=SASA%20NAILS%20%23G019'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">SASA NAILS #G019</h2>
+          <span class="product-category">Press-on Nails</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="nail_images/SASA%20NAILS%20%23K003.jpg" alt="SASA NAILS #K003" class="product-img" onerror="this.src='https://via.placeholder.com/400x400?text=SASA%20NAILS%20%23K003'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">SASA NAILS #K003</h2>
+          <span class="product-category">Press-on Nails</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="nail_images/SASA%20NAILS%20%23K004.jpg" alt="SASA NAILS #K004" class="product-img" onerror="this.src='https://via.placeholder.com/400x400?text=SASA%20NAILS%20%23K004'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">SASA NAILS #K004</h2>
+          <span class="product-category">Press-on Nails</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="nail_images/SASA%20NAILS%20%23K013.jpg" alt="SASA NAILS #K013" class="product-img" onerror="this.src='https://via.placeholder.com/400x400?text=SASA%20NAILS%20%23K013'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">SASA NAILS #K013</h2>
+          <span class="product-category">Press-on Nails</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="nail_images/SASA%20NAILS%20%23N002.jpg" alt="SASA NAILS #N002" class="product-img" onerror="this.src='https://via.placeholder.com/400x400?text=SASA%20NAILS%20%23N002'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">SASA NAILS #N002</h2>
+          <span class="product-category">Press-on Nails</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="nail_images/SASA%20NAILS%20%23N003.jpg" alt="SASA NAILS #N003" class="product-img" onerror="this.src='https://via.placeholder.com/400x400?text=SASA%20NAILS%20%23N003'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">SASA NAILS #N003</h2>
+          <span class="product-category">Press-on Nails</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="nail_images/SASA%20NAILS%20%23N004.jpg" alt="SASA NAILS #N004" class="product-img" onerror="this.src='https://via.placeholder.com/400x400?text=SASA%20NAILS%20%23N004'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">SASA NAILS #N004</h2>
+          <span class="product-category">Press-on Nails</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="nail_images/SASA%20NAILS%20%23N015.jpg" alt="SASA NAILS #N015" class="product-img" onerror="this.src='https://via.placeholder.com/400x400?text=SASA%20NAILS%20%23N015'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">SASA NAILS #N015</h2>
+          <span class="product-category">Press-on Nails</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="nail_images/SASA%20NAILS%20%23N019.jpg" alt="SASA NAILS #N019" class="product-img" onerror="this.src='https://via.placeholder.com/400x400?text=SASA%20NAILS%20%23N019'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">SASA NAILS #N019</h2>
+          <span class="product-category">Press-on Nails</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="nail_images/SASA%20NAILS%20%23N023.jpg" alt="SASA NAILS #N023" class="product-img" onerror="this.src='https://via.placeholder.com/400x400?text=SASA%20NAILS%20%23N023'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">SASA NAILS #N023</h2>
+          <span class="product-category">Press-on Nails</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="nail_images/SASA%20NAILS%20%23N024.jpg" alt="SASA NAILS #N024" class="product-img" onerror="this.src='https://via.placeholder.com/400x400?text=SASA%20NAILS%20%23N024'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">SASA NAILS #N024</h2>
+          <span class="product-category">Press-on Nails</span>
+        </div>
+      </article>
+
+      <!-- 14번째 제품 자리 -->
+      <article class="product-card" id="product-14" style="display: none;">
+        <div class="product-image-wrapper">
+          <img src="nail_images/PRODUCT_NAME_HERE.jpg" alt="14th Product" class="product-img" onerror="this.src='https://via.placeholder.com/400x400?text=Add+14th+Product'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">14th Product</h2>
+          <span class="product-category">Nail Product</span>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> HE Global Ascent. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
