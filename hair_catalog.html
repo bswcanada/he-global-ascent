@@ -14,14 +14,23 @@
       --muted: #6b625b;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); padding: 40px 20px; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
     
-    .header { text-align: center; margin-bottom: 30px; }
-    .header h1 { font-size: 28px; letter-spacing: -0.03em; margin-bottom: 15px; }
-    .header a { color: var(--muted); text-decoration: none; font-size: 14px; border: 1px solid var(--line); padding: 8px 16px; border-radius: 999px; display: inline-block; transition: 0.2s; }
-    .header a:hover { background: var(--dark); color: #fff; }
-    
-    .slider-container { max-width: 1080px; margin: 0 auto; position: relative; }
+    /* 추가된 헤더 및 컨테이너 스타일 */
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .site-header { background: rgba(247, 244, 239, 0.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); padding: 16px 0; position: sticky; top: 0; z-index: 20; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; }
+    .brand-name { font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; font-size: 16px; }
+    .back-link { font-size: 14px; font-weight: 600; color: var(--muted); display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+    .back-link:hover { color: var(--dark); }
+
+    .page-header { padding: 60px 0 40px; text-align: center; }
+    .page-title { font-size: clamp(32px, 5vw, 48px); letter-spacing: -0.04em; margin-bottom: 16px; }
+    .page-desc { color: var(--muted); font-size: 16px; max-width: 600px; margin: 0 auto; }
+
+    /* 기존 슬라이더 스타일 */
+    .slider-container { max-width: 1900px; margin: 0 auto; position: relative; padding: 0 20px; } 
     .slider { 
       position: relative; 
       width: 100%; 
@@ -41,7 +50,7 @@
     .slide.active { display: block; animation: fade 0.4s ease-in-out; }
     @keyframes fade { from { opacity: 0.3; } to { opacity: 1; } }
 
-    .nav-arrows { position: absolute; top: 50%; left: 0; right: 0; display: flex; justify-content: space-between; transform: translateY(-50%); padding: 0 15px; pointer-events: none; }
+    .nav-arrows { position: absolute; top: 50%; left: 0; right: 0; display: flex; justify-content: space-between; transform: translateY(-50%); padding: 0 35px; pointer-events: none; }
     .arrow-btn { pointer-events: auto; background: var(--dark); color: #fff; border: none; width: 50px; height: 50px; border-radius: 50%; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; opacity: 0.6; }
     .arrow-btn:hover { opacity: 1; transform: scale(1.1); }
 
@@ -49,11 +58,13 @@
       display: grid; 
       grid-template-columns: repeat(18, 1fr); 
       gap: 10px 5px; 
-      margin-top: 30px; 
-      max-width: 1080px; 
+      margin-top: 30px;
+      margin-bottom: 60px;
+      max-width: 1900px; 
       margin-left: auto; 
       margin-right: auto; 
       text-align: center;
+      padding: 0 20px;
     }
     
     .dot-btn { 
@@ -84,33 +95,58 @@
     }
     .dot-btn:hover:not(.active) { color: var(--gold); }
 
+    /* 푸터 스타일 추가 (네일 페이지와 통일) */
+    .footer { padding: 40px 0; text-align: center; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+
     @media (max-width: 900px) {
       .nav-dots { grid-template-columns: repeat(9, 1fr); }
       .slider { height: 60vh; min-height: 400px; }
+      .nav-arrows { padding: 0 15px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="header">
-    <h1>Hair Extensions Catalog</h1>
-    <a href="index.html">← Back to Main Website</a>
-  </div>
-
-  <div class="slider-container">
-    <div class="slider" id="slider">
+  <!-- 새롭게 추가된 상단 헤더 -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-name">HE Global Ascent</div>
+      <a href="index.html" class="back-link">
+        &larr; Back to Home
+      </a>
     </div>
-    
-    <div class="nav-arrows">
-      <button class="arrow-btn" onclick="changeSlide(-1)" aria-label="Previous">❮</button>
-      <button class="arrow-btn" onclick="changeSlide(1)" aria-label="Next">❯</button>
-    </div>
-  </div>
+  </header>
 
-  <div class="nav-dots" id="nav-dots">
-  </div>
+  <main>
+    <!-- 새롭게 추가된 페이지 타이틀 -->
+    <section class="page-header container">
+      <h1 class="page-title">Hair Extensions Catalog</h1>
+      <p class="page-desc">Explore our premium selection of hair extensions, wigs, braiding hair, and beauty-related hair products for international markets.</p>
+    </section>
+
+    <div class="slider-container">
+      <div class="slider" id="slider">
+      </div>
+      
+      <div class="nav-arrows">
+        <button class="arrow-btn" onclick="changeSlide(-1)" aria-label="Previous">❮</button>
+        <button class="arrow-btn" onclick="changeSlide(1)" aria-label="Next">❯</button>
+      </div>
+    </div>
+
+    <div class="nav-dots" id="nav-dots">
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> HE Global Ascent. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
     const totalPages = 36;
     const slider = document.getElementById('slider');
     const dotsContainer = document.getElementById('nav-dots');
