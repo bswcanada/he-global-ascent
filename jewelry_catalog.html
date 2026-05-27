@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jewelry Catalog | HE Global Ascent</title>
+  <style>
+    :root {
+      --bg: #f7f4ef;
+      --card: #ffffff;
+      --text: #1c1917;
+      --muted: #6b625b;
+      --line: #e7dfd5;
+      --dark: #181512;
+      --gold: #c9a66b;
+      --radius: 22px;
+      --shadow: 0 18px 45px rgba(28, 25, 23, 0.10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    
+    .site-header { background: rgba(247, 244, 239, 0.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); padding: 16px 0; position: sticky; top: 0; z-index: 20; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; }
+    .brand-name { font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; font-size: 16px; }
+    .back-link { font-size: 14px; font-weight: 600; color: var(--muted); display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+    .back-link:hover { color: var(--dark); }
+
+    .page-header { padding: 60px 0 40px; text-align: center; }
+    .page-title { font-size: clamp(32px, 5vw, 48px); letter-spacing: -0.04em; margin-bottom: 16px; }
+    .page-desc { color: var(--muted); font-size: 16px; max-width: 600px; margin: 0 auto; }
+
+    .catalog-grid { 
+      display: grid; 
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 30px; 
+      padding-bottom: 80px; 
+    }
+    
+    @media (max-width: 900px) {
+      .catalog-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .catalog-grid { grid-template-columns: 1fr; }
+    }
+
+    .product-card { 
+      background: var(--card); 
+      border: 1px solid var(--line); 
+      border-radius: 16px; 
+      overflow: hidden; 
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover { 
+      transform: translateY(-5px); 
+      box-shadow: var(--shadow); 
+    }
+    .product-image-wrapper {
+      width: 100%;
+      aspect-ratio: 1 / 1; 
+      background: #f0ece6;
+      overflow: hidden;
+    }
+    .product-img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      transition: transform 0.5s ease;
+    }
+    .product-card:hover .product-img {
+      transform: scale(1.05); 
+    }
+    .product-info { 
+      padding: 20px; 
+      text-align: center; 
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: center;
+    }
+    .product-name { 
+      font-size: 16px; 
+      font-weight: 700; 
+      color: var(--text); 
+      margin-bottom: 4px;
+    }
+    .product-category { 
+      font-size: 13px; 
+      color: var(--muted); 
+    }
+
+    .footer { padding: 40px 0; text-align: center; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-name">HE Global Ascent</div>
+      <a href="index.html" class="back-link">
+        &larr; Back to Home
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header container">
+      <h1 class="page-title">Custom Jewelry Collection</h1>
+      <p class="page-desc">Browse our affordable custom fashion jewelry and accessories sourced for global boutiques.</p>
+    </section>
+
+    <section class="container catalog-grid">
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE4784WH.jpg" alt="PE4784WH" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE4784WH</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE4785CO.jpg" alt="PE4785CO" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE4785CO</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE5305.jpg" alt="PE5305" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE5305</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE5306.jpg" alt="PE5306" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE5306</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE5318CO.jpg" alt="PE5318CO" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE5318CO</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE5318IV.jpg" alt="PE5318IV" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE5318IV</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE5318PK.jpg" alt="PE5318PK" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE5318PK</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE5434WH.jpg" alt="PE5434WH" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE5434WH</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE5514.jpg" alt="PE5514" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE5514</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE5850.jpg" alt="PE5850" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE5850</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6241BEG.jpg" alt="PE6241BEG" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6241BEG</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6241BL.jpg" alt="PE6241BL" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6241BL</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6241FU.jpg" alt="PE6241FU" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6241FU</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6241PU.jpg" alt="PE6241PU" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6241PU</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6241YL.jpg" alt="PE6241YL" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6241YL</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6253G.jpg" alt="PE6253G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6253G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6286.jpg" alt="PE6286" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6286</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6292G.jpg" alt="PE6292G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6292G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6316.jpg" alt="PE6316" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6316</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6354G.jpg" alt="PE6354G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6354G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6359G.jpg" alt="PE6359G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6359G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6359PK.jpg" alt="PE6359PK" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6359PK</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6508G.jpg" alt="PE6508G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6508G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6542RD.jpg" alt="PE6542RD" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6542RD</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6550G.jpg" alt="PE6550G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6550G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6636BL.jpg" alt="PE6636BL" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6636BL</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6636IV.jpg" alt="PE6636IV" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6636IV</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6636LBL.jpg" alt="PE6636LBL" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6636LBL</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6636PK.jpg" alt="PE6636PK" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6636PK</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6645FU.jpg" alt="PE6645FU" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6645FU</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6645GN.jpg" alt="PE6645GN" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6645GN</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6645OR.jpg" alt="PE6645OR" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6645OR</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6645PU.jpg" alt="PE6645PU" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6645PU</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6744BL.jpg" alt="PE6744BL" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6744BL</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6744G.jpg" alt="PE6744G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6744G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6744GN.jpg" alt="PE6744GN" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6744GN</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE6744PK.jpg" alt="PE6744PK" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE6744PK</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7156G.jpg" alt="PE7156G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7156G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7212AB.jpg" alt="PE7212AB" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7212AB</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7212PK.jpg" alt="PE7212PK" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7212PK</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7215AB.jpg" alt="PE7215AB" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7215AB</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7215PK.jpg" alt="PE7215PK" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7215PK</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7314G.jpg" alt="PE7314G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7314G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7349IV.jpg" alt="PE7349IV" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7349IV</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7352G.jpg" alt="PE7352G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7352G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7488G.jpg" alt="PE7488G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7488G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7497G.jpg" alt="PE7497G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7497G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7498G.jpg" alt="PE7498G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7498G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7522BEG.jpg" alt="PE7522BEG" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7522BEG</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7522G.jpg" alt="PE7522G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7522G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7522PK.jpg" alt="PE7522PK" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7522PK</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7774G.jpg" alt="PE7774G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7774G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7788BL.jpg" alt="PE7788BL" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7788BL</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7788GN.jpg" alt="PE7788GN" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7788GN</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7788IV.jpg" alt="PE7788IV" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7788IV</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7788PK.jpg" alt="PE7788PK" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7788PK</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7794WH.jpg" alt="PE7794WH" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7794WH</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7806IV.jpg" alt="PE7806IV" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7806IV</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7808G.jpg" alt="PE7808G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7808G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7809WH.jpg" alt="PE7809WH" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7809WH</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7881G.jpg" alt="PE7881G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7881G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7898BL.jpg" alt="PE7898BL" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7898BL</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7898G.jpg" alt="PE7898G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7898G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7898PK.jpg" alt="PE7898PK" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7898PK</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7909G.jpg" alt="PE7909G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7909G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7931G.jpg" alt="PE7931G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7931G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE7932G.jpg" alt="PE7932G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE7932G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8058BL.jpg" alt="PE8058BL" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8058BL</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8058CO.jpg" alt="PE8058CO" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8058CO</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8058PK.jpg" alt="PE8058PK" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8058PK</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8058YL.jpg" alt="PE8058YL" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8058YL</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8097GN.jpg" alt="PE8097GN" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8097GN</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8097IV.jpg" alt="PE8097IV" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8097IV</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8097PK.jpg" alt="PE8097PK" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8097PK</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8097WH.jpg" alt="PE8097WH" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8097WH</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8124G.jpg" alt="PE8124G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8124G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8156BL.jpg" alt="PE8156BL" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8156BL</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8156IV.jpg" alt="PE8156IV" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8156IV</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8156RD.jpg" alt="PE8156RD" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8156RD</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8156YL.jpg" alt="PE8156YL" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8156YL</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8182GN.jpg" alt="PE8182GN" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8182GN</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8182IV.jpg" alt="PE8182IV" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8182IV</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8182OR.jpg" alt="PE8182OR" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8182OR</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8182PK.jpg" alt="PE8182PK" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8182PK</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8183IV.jpg" alt="PE8183IV" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8183IV</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8220G.jpg" alt="PE8220G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8220G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8220GN.jpg" alt="PE8220GN" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8220GN</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8220PK.jpg" alt="PE8220PK" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8220PK</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8303FU.jpg" alt="PE8303FU" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8303FU</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8303ML.jpg" alt="PE8303ML" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8303ML</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8339G.jpg" alt="PE8339G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8339G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8376G.jpg" alt="PE8376G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8376G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8384G.jpg" alt="PE8384G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8384G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8385G_R.jpg" alt="PE8385G_R" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8385G_R</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8438FU.jpg" alt="PE8438FU" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8438FU</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8438G.jpg" alt="PE8438G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8438G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8438WH.jpg" alt="PE8438WH" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8438WH</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8438YL.jpg" alt="PE8438YL" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8438YL</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8527G.jpg" alt="PE8527G" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8527G</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8527PK.jpg" alt="PE8527PK" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8527PK</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8530BL.jpg" alt="PE8530BL" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8530BL</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8530OR.jpg" alt="PE8530OR" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8530OR</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8530PK.jpg" alt="PE8530PK" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8530PK</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8530WH.jpg" alt="PE8530WH" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8530WH</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8570BL.jpg" alt="PE8570BL" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8570BL</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8570ML.jpg" alt="PE8570ML" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8570ML</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PE8570YL.jpg" alt="PE8570YL" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PE8570YL</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PN7165PK.jpg" alt="PN7165PK" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PN7165PK</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PN7311FU.jpg" alt="PN7311FU" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PN7311FU</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrapper">
+          <img src="jewelry_images/PN8435PK.jpg" alt="PN8435PK" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Not+Found'">
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">PN8435PK</h2>
+          <span class="product-category">Custom Jewelry</span>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> HE Global Ascent. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
