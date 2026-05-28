@@ -266,7 +266,6 @@
             <p class="lang-el" data-id="p4-p">Leading Korean skincare, innovative cosmetics, and trending beauty brands curated for the European and Latin American markets.</p>
             <a href="https://aprilbes.cafe24.com/shop2/product/list.html?cate_no=115#none" target="_blank" class="btn-card-link lang-el" data-id="btn-view-products">View Products</a>
           </article>
-          <!-- Added Card 05: Custom Eyelashes -->
           <article class="card">
             <img class="card-img" src="prod-eyelashes.jpg" alt="Custom Eyelashes" onerror="this.src='https://via.placeholder.com/300?text=Eyelashes'" />
             <div class="card-icon">05</div>
@@ -339,12 +338,8 @@
           <div class="section-label lang-el" data-id="contact-label">Contact</div>
           <h2 class="lang-el" data-id="contact-h2">Ready to request a wholesale quote?</h2>
           
-          <!-- Contact Form with Web3Forms -->
           <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-            <!-- Web3Forms Access Key Input -->
             <input type="hidden" name="access_key" value="7dd6996c-5881-4717-b542-31370543eb8d">
-            
-            <!-- Optional: Custom Subject Line -->
             <input type="hidden" name="subject" value="New Wholesale Inquiry from HE Global Ascent Website">
             
             <div class="form-group">
@@ -481,6 +476,23 @@
       localStorage.setItem("cookiesAccepted", "true");
       document.getElementById("cookie-banner").style.display = "none";
     }
+
+    // 부드러운 스크롤 및 주소창에서 # 해시 숨기기
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#' || targetId === '') return;
+
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+          history.replaceState(null, null, window.location.pathname);
+        }
+      });
+    });
   </script>
 </body>
 </html>
