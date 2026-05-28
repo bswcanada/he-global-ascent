@@ -121,7 +121,13 @@
     .section-label { color: var(--gold); text-transform: uppercase; letter-spacing: 0.18em; font-size: 13px; font-weight: 800; margin-bottom: 12px; }
     h2 { font-size: clamp(30px, 4vw, 48px); line-height: 1.08; letter-spacing: -0.045em; }
     .section-text { color: var(--muted); margin-top: 16px; font-size: 17px; max-width: 720px; }
-    .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    
+    /* Modified .cards CSS to handle 5 cards with 3 on top, 2 on bottom */
+    .cards { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; }
+    .cards .card:nth-child(1), .cards .card:nth-child(2), .cards .card:nth-child(3) { grid-column: span 2; }
+    .cards .card:nth-child(4) { grid-column: 2 / span 2; }
+    .cards .card:nth-child(5) { grid-column: 4 / span 2; }
+    
     .about { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .about-content { max-width: 860px; }
     .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -144,9 +150,16 @@
     .footer-legal a:hover { color: var(--gold); text-decoration: underline; }
     .cookie-banner { position: fixed; bottom: 24px; left: 24px; right: 24px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 9999; display: none; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto; }
     .cookie-content { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 20px; font-size: 13px; color: var(--muted); }
-    @media (max-width: 1024px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 1024px) { 
+        .cards { grid-template-columns: repeat(4, 1fr); }
+        .cards .card:nth-child(1), .cards .card:nth-child(2), .cards .card:nth-child(3), .cards .card:nth-child(4), .cards .card:nth-child(5) { grid-column: span 2; }
+    }
     @media (max-width: 900px) { .nav { display: none; } .hero-grid, .cta-grid { grid-template-columns: 1fr; } .process-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 620px) { .cards { grid-template-columns: 1fr; } .process-grid { grid-template-columns: 1fr; } .brand-subtitle { display: none; } .cookie-content { flex-direction: column; text-align: center; } }
+    @media (max-width: 620px) { 
+        .cards { grid-template-columns: 1fr; } 
+        .cards .card:nth-child(1), .cards .card:nth-child(2), .cards .card:nth-child(3), .cards .card:nth-child(4), .cards .card:nth-child(5) { grid-column: span 1; }
+        .process-grid { grid-template-columns: 1fr; } .brand-subtitle { display: none; } .cookie-content { flex-direction: column; text-align: center; } 
+    }
   </style>
 </head>
 <body>
@@ -242,7 +255,7 @@
           <article class="card">
             <img class="card-img" src="prod-jewelry.jpg" alt="Fashion jewelry and accessories" onerror="this.src='https://via.placeholder.com/300'" />
             <div class="card-icon">03</div>
-            <h3 class="lang-el" data-id="p3-h3">Custom Jewelry</h3>
+            <h3 class="lang-el" data-id="p3-h3">Custom Jewelries</h3>
             <p class="lang-el" data-id="p3-p">Affordable fashion earrings, necklaces, bracelets, jewelry sets, and custom accessory sourcing for boutiques and online stores.</p>
             <a href="jewelry_catalog.html" class="btn-card-link lang-el" data-id="btn-view-products">View Products</a>
           </article>
@@ -252,6 +265,14 @@
             <h3 class="lang-el" data-id="p4-h3">K-Beauty</h3>
             <p class="lang-el" data-id="p4-p">Leading Korean skincare, innovative cosmetics, and trending beauty brands curated for the European and Latin American markets.</p>
             <a href="https://aprilbes.cafe24.com/shop2/product/list.html?cate_no=115#none" target="_blank" class="btn-card-link lang-el" data-id="btn-view-products">View Products</a>
+          </article>
+          <!-- Added Card 05: Custom Eyelashes -->
+          <article class="card">
+            <img class="card-img" src="prod-eyelashes.jpg" alt="Custom Eyelashes" onerror="this.src='https://via.placeholder.com/300?text=Eyelashes'" />
+            <div class="card-icon">05</div>
+            <h3 class="lang-el" data-id="p5-h3">Custom Eyelashes</h3>
+            <p class="lang-el" data-id="p5-p">High-quality wholesale custom eyelashes, extensions, and professional beauty supplies.</p>
+            <a href="eyelashes_catalog.html" class="btn-card-link lang-el" data-id="btn-view-products">View Products</a>
           </article>
         </div>
       </div>
@@ -326,9 +347,6 @@
             <!-- Optional: Custom Subject Line -->
             <input type="hidden" name="subject" value="New Wholesale Inquiry from HE Global Ascent Website">
             
-            <!-- Optional: Redirect to a custom page after success (if you have one) -->
-            <!-- <input type="hidden" name="redirect" value="https://yourwebsite.com/thanks.html"> -->
-
             <div class="form-group">
               <label for="name" class="form-label lang-el" data-id="form-name">Name</label>
               <input type="text" id="name" name="name" class="form-input" required placeholder="Your Name">
@@ -388,8 +406,9 @@
         "products-label": "Product Range", "products-h2": "Practical wholesale categories for fast-moving markets.", "products-text": "We focus on product categories that are easy for retailers, salons, boutiques, and online stores to introduce to their customers.",
         "p1-h3": "Hair Extensions", "p1-p": "Wholesale sourcing for hair extensions, wigs, braiding hair, bundles, and beauty-related hair products for international retailers.",
         "p2-h3": "Nail Products", "p2-p": "Nail-related wholesale items including press-on nails, nail accessories, tools, salon supplies, and trend-based beauty products.",
-        "p3-h3": "Custom Jewelry", "p3-p": "Affordable fashion earrings, necklaces, bracelets, jewelry sets, and custom accessory sourcing for boutiques and online stores.",
+        "p3-h3": "Custom Jewelries", "p3-p": "Affordable fashion earrings, necklaces, bracelets, jewelry sets, and custom accessory sourcing for boutiques and online stores.",
         "p4-h3": "K-Beauty", "p4-p": "Leading Korean skincare, innovative cosmetics, and trending beauty brands curated for the European and Latin American markets.",
+        "p5-h3": "Custom Eyelashes", "p5-p": "High-quality wholesale custom eyelashes, extensions, and professional beauty supplies.",
         "btn-view-products": "View Products",
         "about-label": "About Us", "about-h2": "A simple and reliable export partner for growing businesses.",
         "about-p1": "HE Global Ascent is a trusted and reliable export partner for growing businesses entering the European and Latin American markets.",
@@ -417,8 +436,10 @@
         "products-label": "Gama de productos", "products-h2": "Categorías mayoristas adecuadas para mercados de alta rotación.", "products-text": "Nos centramos en categorías de producto de venta rápida por minoristas, salones de estética, boutiques y tiendas online a sus clientes.",
         "p1-h3": "Extensiones de cabello", "p1-p": "Abastecimiento al por mayor de extensiones de cabello, pelucas, cabello para trenzas, mechones (bundles) y productos capilares de belleza para minoristas internacionales.",
         "p2-h3": "Productos para uñas", "p2-p": "Artículos al por mayor para uñas: uñas adhesivas, accesorios de uñas, herramientas, material.",
-        "p3-h3": "Bisutería personalizada", "p3-p": "Pendientes, collares, pulseras, conjuntos de bisutería de moda y accesorios personalizados a precios asequibles para boutiques y tiendas online.",
+        "p3-h3": "Joyas Personalizadas",
+        "p3-p": "Pendientes, collares, pulseras, conjuntos de bisutería de moda y accesorios personalizados a precios asequibles para boutiques y tiendas online.",
         "p4-h3": "K-Beauty", "p4-p": "Cuidado de la piel líder en Corea, cosméticos innovadores y marcas trendy de belleza seleccionadas para los mercados europeo y latinoamericano.",
+        "p5-h3": "Pestañas Personalizadas", "p5-p": "Pestañas al por mayor de alta calidad y suministros de extensiones para profesionales de la belleza.",
         "btn-view-products": "Ver productos",
         "about-label": "Sobre nosotros / Sobre la empresa", "about-h2": "Un socio de exportación sencillo y fiable para negocios en crecimiento.",
         "about-p1": "HE Global Ascent es un socio de exportación fiable para negocios en crecimiento que entran en los mercados europeo y latinoamericano.",
