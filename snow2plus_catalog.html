@@ -150,7 +150,23 @@
       aspect-ratio: 1 / 1;
       object-fit: contain;
       background: #fff;
-      padding: 14px;
+      padding: 14px 14px 8px;
+    }
+
+    .product-name {
+      min-height: 52px;
+      padding: 0 16px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.35;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--dark);
+      text-transform: uppercase;
+      word-break: keep-all;
     }
 
     @media (max-width: 900px) {
@@ -247,7 +263,7 @@
     <section class="product-gallery-section">
       <div class="product-gallery-header">
         <h2 class="product-gallery-title">Product Images</h2>
-        
+        <p class="product-gallery-desc">Snow2Plus product images displayed 3 per row. Product names are shown in uppercase below each image.</p>
       </div>
       <div class="product-grid" id="product-grid" aria-label="Snow2Plus product image gallery"></div>
     </section>
@@ -302,13 +318,15 @@
       '16_MAGSIUM_Wrinkle_Repair_Patch & Mask.jpg'
     ];
 
-    function formatProductAlt(fileName) {
+    function formatProductName(fileName) {
       return fileName
         .replace(/^[0-9]+_/, '')
         .replace(/\.[^.]+$/, '')
         .replace(/_/g, ' ')
+        .replace(/\(/g, ' (')
         .replace(/\s+/g, ' ')
-        .trim();
+        .trim()
+        .toUpperCase();
     }
 
     function initProductGallery() {
@@ -316,16 +334,23 @@
         const card = document.createElement('div');
         card.className = 'product-card';
 
+        const productName = formatProductName(fileName);
+
         const img = document.createElement('img');
         img.src = `snow2plus/${encodeURIComponent(fileName)}`;
-        img.alt = formatProductAlt(fileName);
+        img.alt = productName;
         img.loading = 'lazy';
         img.onerror = function() {
           card.classList.add('is-missing');
           this.alt = `Missing image: snow2plus/${fileName}`;
         };
 
+        const name = document.createElement('p');
+        name.className = 'product-name';
+        name.textContent = productName;
+
         card.appendChild(img);
+        card.appendChild(name);
         productGrid.appendChild(card);
       });
     }
