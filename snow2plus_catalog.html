@@ -91,6 +91,94 @@
     }
     .dot-btn:hover:not(.active) { color: var(--gold); }
 
+
+
+    /* Product gallery shown below the catalog slider */
+    .product-gallery-section {
+      max-width: 1120px;
+      margin: 42px auto 70px;
+      padding: 0 20px;
+    }
+
+    .product-gallery-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+      margin-bottom: 22px;
+      border-top: 1px solid var(--line);
+      padding-top: 32px;
+    }
+
+    .product-gallery-title {
+      font-size: clamp(24px, 3vw, 34px);
+      letter-spacing: -0.03em;
+      color: var(--dark);
+    }
+
+    .product-gallery-desc {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 430px;
+      text-align: right;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(28, 25, 23, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px rgba(28, 25, 23, 0.08);
+    }
+
+    .product-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      background: #fff;
+      padding: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .product-gallery-header {
+        display: block;
+      }
+
+      .product-gallery-desc {
+        text-align: left;
+        margin-top: 10px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-gallery-section {
+        margin-top: 32px;
+      }
+    }
+
     .footer { padding: 40px 0; text-align: center; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
 
     /* 모달(팝업) 스타일 및 화살표 버튼 */
@@ -155,6 +243,15 @@
 
     <div class="nav-dots" id="nav-dots">
     </div>
+
+    <section class="product-gallery-section">
+      <div class="product-gallery-header">
+        <h2 class="product-gallery-title">Product Images</h2>
+        
+      </div>
+      <div class="product-grid" id="product-grid" aria-label="Snow2Plus product image gallery"></div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -184,6 +281,55 @@
     const modal = document.getElementById('imageModal');
     const popupImage = document.getElementById('popupImage');
     const closeModal = document.getElementById('closeModal');
+
+    const productGrid = document.getElementById('product-grid');
+    const productFiles = [
+      '1_Melasma_Care_Set.png',
+      '2_Boostok_Eco_Hair.jpg',
+      '3_boostok.jpg',
+      '4_ac_magnesium_patch(mini).jpg',
+      '5_ac_magnesium_patch(small).jpg',
+      '6_ac_magnesium_patch(medium).jpg',
+      '7_ac_magnesium_patch(large).jpg',
+      '8_Handy_ToK_Clear_Patch(45EA).jpg',
+      '9_Handy_ToK_Clear_Patch(120EA).jpg',
+      '10_One_Night_Trouble_Patch_Plus.jpg',
+      '11_One_Night_Trouble_Patch_Plus(Value Pack).jpg',
+      '12_Handy_Tok!_Point_Patch.jpg',
+      '13_Tiger_Blemish_Patch_8ea.jpg',
+      '14_Tiger_Blemish_Patch_16ea.jpg',
+      '15_Tiger_Blemish_Patch_Medium.jpg',
+      '16_MAGSIUM_Wrinkle_Repair_Patch & Mask.jpg'
+    ];
+
+    function formatProductAlt(fileName) {
+      return fileName
+        .replace(/^[0-9]+_/, '')
+        .replace(/\.[^.]+$/, '')
+        .replace(/_/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
+    function initProductGallery() {
+      productFiles.forEach((fileName) => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+
+        const img = document.createElement('img');
+        img.src = `snow2plus/${encodeURIComponent(fileName)}`;
+        img.alt = formatProductAlt(fileName);
+        img.loading = 'lazy';
+        img.onerror = function() {
+          card.classList.add('is-missing');
+          this.alt = `Missing image: snow2plus/${fileName}`;
+        };
+
+        card.appendChild(img);
+        productGrid.appendChild(card);
+      });
+    }
+
 
     function initSlider() {
       for (let i = 1; i <= totalPages; i++) {
@@ -249,6 +395,7 @@
     modal.onclick = (e) => { if (e.target === modal) closePopup(); };
 
     initSlider();
+    initProductGallery();
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') {
